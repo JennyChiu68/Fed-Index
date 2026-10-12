@@ -5,8 +5,18 @@ const TTL=5*60*1000;
 let memory=null,inflight=null,lastRefreshError=null;
 async function officialFetch(url){
  const u=new URL(url);if(u.protocol!=='https:'||!ALLOWED_HOSTS.has(u.hostname))throw Error('source_not_allowed');
- const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),18000);
- try{const r=await fetch(url,{signal:controller.signal,headers:{'accept':'text/html,application/json,application/rss+xml','user-agent':'FedPulse/1.0 official-public-data research monitor'},cf:{cacheTtl:300,cacheEverything:true}});if(!r.ok)throw Error(`source_http_${r.status}`);const content=await r.text();if(content.length>4*1024*1024)throw Error('source_body_too_large');return content;}finally{clearTimeout(timer)}
+ let lastError;
+ for(let attempt=0;attempt<2;attempt++){
+  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),20000);
+  try{
+   const r=await fetch(url,{signal:controller.signal,headers:{'accept':'text/html,application/json,application/rss+xml','user-agent':'FedPulse/1.0 official-public-data research monitor'}});
+   if(!r.ok){const error=Error('source_http_'+r.status);if(r.status<500)throw error;lastError=error;}
+   else {const content=await r.text();if(content.length>4*1024*1024)throw Error('source_body_too_large');return content;}
+  }catch(e){lastError=e;if(String(e.message).startsWith('source_http_4'))throw e;}
+  finally{clearTimeout(timer)}
+  if(attempt===0)await new Promise(resolve=>setTimeout(resolve,400));
+ }
+ throw lastError;
 }
 async function load(DB){if(memory)return memory;if(DB){try{const row=await DB.prepare('SELECT data FROM source_cache WHERE key = ?').bind('official').first();if(row)memory=JSON.parse(row.data)}catch{}}return memory||seed;}
 async function refresh(DB,prior){
