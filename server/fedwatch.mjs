@@ -46,10 +46,10 @@ export async function collectFedWatch({fetchImpl=fetch,now=new Date(),expectedMe
    const remaining=deadline-Date.now();if(remaining<250)throw Error('cme_fetch_timeout');
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),Math.min(8000,remaining));
    try{
-    const r=await fetchImpl(url.href,{redirect:'manual',signal:controller.signal,headers:{accept:'text/html',referer:CME_SOURCE,...(cookies.size?{cookie:[...cookies].map(([k,v])=>`${k}=${v}`).join('; ')}:{})}});
+    const r=await fetchImpl(url.href,{redirect:'manual',signal:controller.signal,referrer:CME_SOURCE,referrerPolicy:'unsafe-url',headers:{accept:'text/html',referer:CME_SOURCE,'user-agent':'FedPulse/1.0 (CME FedWatch public table)',...(cookies.size?{cookie:[...cookies].map(([k,v])=>`${k}=${v}`).join('; ')}:{})}});
     const set=r.headers.getSetCookie?.()||[r.headers.get('set-cookie')||''];
     for(const line of set)for(const cookie of line.split(/,(?=\s*[^;,\s]+=)/)){const pair=cookie.split(';')[0],i=pair.indexOf('=');if(i>0)cookies.set(pair.slice(0,i).trim(),pair.slice(i+1))}
-    if(r.status>=300&&r.status<400){const location=r.headers.get('location');if(!location)throw Error('cme_redirect_missing');await r.body?.cancel();url=new URL(location,url);continue}
+    if(r.status>=300&&r.status<400){const location=r.headers.get('location');if(!location)throw Error('cme_redirect_missing');await r.body?.cancel();url=new URL(location,url);if(/\/Error\/ErrorPage\.aspx/i.test(url.pathname)){const message=url.searchParams.get('MSG')||'';throw Error(/referrer/i.test(message)?'cme_denied_referrer':/session/i.test(message)?'cme_denied_session':'cme_access_failed')}continue}
     if(!r.ok)throw Error('cme_http_'+r.status);const html=await r.text();if(html.length>2*1024*1024)throw Error('cme_body_too_large');if(/Access to QuikStrike has been denied|There was a problem loading this content/.test(html))throw Error('cme_access_failed');return {html,url:url.href};
    }finally{clearTimeout(timer)}
   }
