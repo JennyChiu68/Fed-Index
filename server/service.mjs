@@ -3,11 +3,12 @@ import {collect,publicSnapshot} from './collector.mjs';
 import {ALLOWED_HOSTS} from './sources.mjs';
 const TTL=5*60*1000;
 let memory=null,inflight=null,lastRefreshError=null;
-async function officialFetch(url){
+async function officialFetch(url,deadline=Date.now()+23000){
  const u=new URL(url);if(u.protocol!=='https:'||!ALLOWED_HOSTS.has(u.hostname))throw Error('source_not_allowed');
  let lastError;
  for(let attempt=0;attempt<2;attempt++){
-  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),20000);
+  const remaining=deadline-Date.now();if(remaining<500)throw Error('refresh_budget_exhausted');
+  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),Math.min(6500,remaining));
   try{
    const r=await fetch(url,{signal:controller.signal,headers:{'accept':'text/html,application/json,application/rss+xml','user-agent':'FedPulse/1.0 official-public-data research monitor'}});
    if(!r.ok){const error=Error('source_http_'+r.status);if(r.status<500)throw error;lastError=error;}
@@ -20,7 +21,7 @@ async function officialFetch(url){
 }
 async function load(DB){if(memory)return memory;if(DB){try{const row=await DB.prepare('SELECT data FROM source_cache WHERE key = ?').bind('official').first();if(row)memory=JSON.parse(row.data)}catch{}}return memory||seed;}
 async function refresh(DB,prior){
- const data=await collect({fetchText:officialFetch,prior});const snapshot=publicSnapshot(data);
+ const deadline=Date.now()+23000;const data=await collect({fetchText:url=>officialFetch(url,deadline),prior});const snapshot=publicSnapshot(data);
  // Critical identity failures do not become a new valid reading.
  if(data.roster.checkedAt!==data.collectedAt){data.warnings.unshift('官方委员名单本次未通过核验，暂显示最近核实数据。');}
  if(DB){await DB.batch([

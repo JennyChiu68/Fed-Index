@@ -81,8 +81,8 @@ export async function collect({fetchText,prior=null,now=new Date(),bootstrap=fal
  const safe=async(url,id)=>{try{const result=await fetchText(url);statuses.push({id,url,status:'ok',checkedAt:now.toISOString()});return result}catch(e){statuses.push({id,url,status:'error',checkedAt:now.toISOString(),error:String(e.message).slice(0,100)});return null}};
  const year=now.getUTCFullYear();
  const entries=INDEXES.map(s=>({...s,url:s.url.replace('YEAR',year)}));
- const results=await parallel(entries,async s=>({source:s,html:await safe(s.url,s.id)}));
  const [fomcHtml,calendarHtml,rateRaw]=await Promise.all([safe(FOMC_URL,'fomc'),safe(CALENDAR_URL,'calendar'),safe(RATE_URL,'effr')]);
+ const results=await parallel(entries,async s=>({source:s,html:await safe(s.url,s.id)}));
  let roster;try{if(fomcHtml)roster=parseRoster(fomcHtml,now)}catch(e){warnings.push(e.message)}
  if(!roster)throw Error('official_roster_unavailable_or_changed');
  const documents=new Map((prior?.documents||[]).filter(d=>Date.parse(d.date)>=now-180*DAY).map(d=>[d.url,{...d,...scoreText(d.paragraphs)}]));
