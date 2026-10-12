@@ -1,6 +1,7 @@
 import seed from '../data/verified-source-data.json';
 import {collect,publicSnapshot} from './collector.mjs';
 import {ALLOWED_HOSTS} from './sources.mjs';
+import {getFedWatch} from './fedwatch-cache.mjs';
 const TTL=5*60*1000;
 let memory=null,inflight=null,lastRefreshError=null;
 async function officialFetch(url,deadline=Date.now()+23000){
@@ -33,14 +34,19 @@ async function refresh(DB,prior){
 export async function handlePulse(request,env,ctx){
  if(request.method!=='GET')return Response.json({error:'method_not_allowed'},{status:405});
  const DB=env.DB;const prior=await load(DB);const age=Date.now()-Date.parse(prior.collectedAt);let data=prior;
+ const waitForSources=new URL(request.url).searchParams.get('wait')==='1';
+ const cmeTask=getFedWatch({DB,ctx,wait:waitForSources,expectedMeeting:prior.calendar?.next?.end});
  if(age>TTL){
   if(!inflight)inflight=refresh(DB,prior).catch(e=>{lastRefreshError=String(e.message);throw e}).finally(()=>{inflight=null});
   // Respond from verified stored data while refreshing official sources in the background.
   // First-time callers can explicitly wait, bounded by source timeouts, for deployment validation.
-  const wait=new URL(request.url).searchParams.get('wait')==='1';
+ const wait=waitForSources;
   if(wait){try{data=await inflight}catch(e){data={...prior,warnings:[...(prior.warnings||[]),'本次抓取失败，显示最近已核实数据。'],refreshError:String(e.message)}}}
   else ctx.waitUntil(inflight.catch(()=>{}));
  }
  const snapshot=publicSnapshot(data);snapshot.cacheAgeSeconds=Math.floor((Date.now()-Date.parse(data.collectedAt))/1000);snapshot.refreshing=Boolean(inflight);snapshot.storage=DB?'persistent':'seed_only';snapshot.stale=snapshot.cacheAgeSeconds>1800||Boolean(lastRefreshError);if(lastRefreshError)snapshot.warnings=[...(snapshot.warnings||[]),'最近一次来源核查失败：'+lastRefreshError];
+ snapshot.probabilities=await cmeTask;
+ // Keep the CME timestamp and failure state independent of the Fed text refresh.
+ snapshot.refreshing=snapshot.refreshing||snapshot.probabilities.refreshing;
  return Response.json(snapshot,{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
 }

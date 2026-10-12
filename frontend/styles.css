@@ -26,3 +26,10 @@
 .probability-link{border-top:1px solid #edf0f3;margin-top:15px;padding-top:12px;font-size:10px}
 .probability-link small{display:block;color:#9aa6af;font-size:9px;margin-top:6px}
 .spinning svg{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+
+/* CME FedWatch official public table */
+.probability-lead{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px}
+.probability-label{font-size:11px;color:#7a8a97}.fedwatch-card .big-prob{margin:5px 0 8px;font-size:38px;color:var(--ink)}.big-prob small{font-size:17px;font-weight:400;margin-left:3px}
+.current-target{font-size:9px;line-height:1.9;color:#97a2ad;text-align:right}.current-target b{color:#667d8d;font-size:11px;font-weight:500;white-space:nowrap}
+.fedwatch-summary{display:grid;grid-template-columns:repeat(3,1fr);padding:13px 0 17px;gap:10px}.fedwatch-summary div{display:flex;flex-direction:column;gap:7px}.fedwatch-summary span{font-size:10px;color:#82919e}.fedwatch-summary i{display:inline-block;width:5px;height:5px;border-radius:50%;margin-right:5px}.fedwatch-summary strong{font-size:17px;font-weight:600}.fedwatch-summary small{font-size:10px;font-weight:400;margin-left:2px}
+.outcomes-title{display:flex;justify-content:space-between;padding:13px 0 7px;border-top:1px solid var(--line);font-size:9px;color:#94a0aa}.outcome-row{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:10px 0;border-bottom:1px solid #f1f4f6;font-size:11px}.outcome-row:last-child{border:0}.outcome-row small{font-size:8px;color:#8594a0;margin-left:5px;background:#f2f5f7;border-radius:4px;padding:3px 5px}.outcome-row strong{font-size:12px;font-weight:550}.source-retry{color:#ad8658}

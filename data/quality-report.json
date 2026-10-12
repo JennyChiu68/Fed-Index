@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-12T08:05:59.896Z",
+  "checkedAt": "2026-10-12T08:50:54.552Z",
   "documents": 89,
   "scoredDocuments": 36,
   "coverage": {
@@ -22,6 +22,6 @@
     "Rule measurement is research-grade and has not been backtested or independently calibrated.",
     "Some official appearances have video or no transcript; these are excluded.",
     "Retrospective history uses the current roster and model.",
-    "Market probabilities are unavailable without a licensed API."
+    "CME probabilities use the public FedWatch Current table; source timestamps and cache failures are preserved. These are futures-implied probabilities, independent of the text index."
   ]
 }

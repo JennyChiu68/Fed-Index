@@ -1,0 +1,95 @@
+{
+  "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+  "provider": "CME FedWatch",
+  "meetingDate": "2026-10-28",
+  "asOf": "2026-10-12T08:35:50.000Z",
+  "asOfLabel": "12 Oct 2026 03:35:50 CT",
+  "checkedAt": "2026-10-12T08:46:46.648Z",
+  "currentRange": {
+    "lowerBps": 375,
+    "upperBps": 400
+  },
+  "cut": 0,
+  "hold": 80.6,
+  "hike": 19.4,
+  "outcomes": [
+    {
+      "lowerBps": 250,
+      "upperBps": 275,
+      "probability": 0,
+      "current": false,
+      "hidden": true
+    },
+    {
+      "lowerBps": 275,
+      "upperBps": 300,
+      "probability": 0,
+      "current": false,
+      "hidden": true
+    },
+    {
+      "lowerBps": 300,
+      "upperBps": 325,
+      "probability": 0,
+      "current": false,
+      "hidden": true
+    },
+    {
+      "lowerBps": 325,
+      "upperBps": 350,
+      "probability": 0,
+      "current": false,
+      "hidden": true
+    },
+    {
+      "lowerBps": 350,
+      "upperBps": 375,
+      "probability": 0,
+      "current": false,
+      "hidden": false
+    },
+    {
+      "lowerBps": 375,
+      "upperBps": 400,
+      "probability": 80.6,
+      "current": true,
+      "hidden": false
+    },
+    {
+      "lowerBps": 400,
+      "upperBps": 425,
+      "probability": 19.4,
+      "current": false,
+      "hidden": false
+    },
+    {
+      "lowerBps": 425,
+      "upperBps": 450,
+      "probability": 0,
+      "current": false,
+      "hidden": true
+    },
+    {
+      "lowerBps": 450,
+      "upperBps": 475,
+      "probability": 0,
+      "current": false,
+      "hidden": true
+    },
+    {
+      "lowerBps": 475,
+      "upperBps": 500,
+      "probability": 0,
+      "current": false,
+      "hidden": true
+    },
+    {
+      "lowerBps": 500,
+      "upperBps": 525,
+      "probability": 0,
+      "current": false,
+      "hidden": true
+    }
+  ],
+  "method": "public_fedwatch_current_table"
+}
