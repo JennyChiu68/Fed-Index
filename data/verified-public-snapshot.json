@@ -1,0 +1,1633 @@
+{
+  "score": 69,
+  "previous": 69,
+  "week": 69,
+  "change": 0,
+  "weekChange": 0,
+  "eventDate": "2026-10-08",
+  "previousDate": "2026-10-01",
+  "history": [
+    {
+      "date": "2026-05-09",
+      "score": 53,
+      "covered": 3,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-05-19",
+      "score": 56,
+      "covered": 4,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-05-22",
+      "score": 62,
+      "covered": 4,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-05-27",
+      "score": 58,
+      "covered": 6,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-05-29",
+      "score": 57,
+      "covered": 8,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-06-02",
+      "score": 58,
+      "covered": 9,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-07-13",
+      "score": 58,
+      "covered": 9,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-07-15",
+      "score": 61,
+      "covered": 9,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-07-16",
+      "score": 60,
+      "covered": 10,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-07-31",
+      "score": 62,
+      "covered": 11,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-08-04",
+      "score": 63,
+      "covered": 11,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-08-05",
+      "score": 64,
+      "covered": 11,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-08-11",
+      "score": 66,
+      "covered": 11,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-08-13",
+      "score": 66,
+      "covered": 12,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-08-25",
+      "score": 67,
+      "covered": 13,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 69,
+      "covered": 13,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 69,
+      "covered": 13,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 69,
+      "covered": 13,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 69,
+      "covered": 13,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-21",
+      "score": 68,
+      "covered": 14,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-22",
+      "score": 68,
+      "covered": 14,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-24",
+      "score": 69,
+      "covered": 14,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-28",
+      "score": 69,
+      "covered": 14,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-29",
+      "score": 68,
+      "covered": 14,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-09-30",
+      "score": 68,
+      "covered": 14,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-10-01",
+      "score": 69,
+      "covered": 14,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-10-08",
+      "score": 69,
+      "covered": 15,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
+    }
+  ],
+  "signals": [
+    {
+      "id": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
+      "url": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
+      "member": "musalem",
+      "bank": "stlouis",
+      "date": "2026-10-08",
+      "title": "Moderated Q&A at Bloomberg’s The Future of Fixed Income Event",
+      "sourceHost": "www.stlouisfed.org",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "President Musalem noted inflation remains elevated and is being driven by persistent demand pressures and negative supply shocks."
+        }
+      ],
+      "excerpt": "President Musalem noted inflation remains elevated and is being driven by persistent demand pressures and negative supply shocks.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:43:25.013Z",
+      "impact": -0.4,
+      "impactType": "leave_one_out"
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
+      "member": "waller",
+      "bank": "board",
+      "date": "2026-10-08",
+      "title": "The Signaling Value of the Summary of Economic Projections",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 84,
+      "rawScore": 0.6842105263157895,
+      "labels": [
+        "通胀压力仍高",
+        "政策需要收紧",
+        "支持进一步加息"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "But then, over the course of the first half of this year, the labor market appeared to stabilize, while progress on inflation…"
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "When the first inflation reading for August came in hot just before the FOMC's September meeting, it was impossible to deny that…"
+        },
+        {
+          "label": "政策需要收紧",
+          "direction": "hawk",
+          "strength": 3,
+          "excerpt": "The projections submitted at the September meeting showed that a large majority of FOMC participants believe it will be appropriate to raise…"
+        },
+        {
+          "label": "支持进一步加息",
+          "direction": "hawk",
+          "strength": 1.5,
+          "excerpt": "If the economic data continue to come in as expected, I anticipate additional hikes to support a timelier return of inflation to…"
+        }
+      ],
+      "excerpt": "The projections submitted at the September meeting showed that a large majority of FOMC participants believe it will be appropriate to raise…",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:43:25.013Z",
+      "impact": 0.6,
+      "impactType": "leave_one_out"
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
+      "member": "jefferson",
+      "bank": "board",
+      "date": "2026-10-01",
+      "title": "The U.S. Economy and Monetary Policy",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 70,
+      "rawScore": 0.4,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "However, inflation is too high and has exceeded the Federal Reserve's 2 percent target for more than five years."
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "While I view the risks to both economic activity and employment as roughly balanced at this point, I see upside risks to…"
+        }
+      ],
+      "excerpt": "However, inflation is too high and has exceeded the Federal Reserve's 2 percent target for more than five years.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:43:25.013Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
+      "member": "cook",
+      "bank": "board",
+      "date": "2026-09-30",
+      "title": "The Dual Mandate in Rural America",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "Regardless of whether you are in a rural or urban area, the fact remains that inflation has been too high for too…"
+        }
+      ],
+      "excerpt": "Regardless of whether you are in a rural or urban area, the fact remains that inflation has been too high for too…",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:43:25.013Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260929",
+      "url": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260929",
+      "member": "williams",
+      "bank": "newyork",
+      "date": "2026-09-29",
+      "title": "Unwavering Dedication",
+      "sourceHost": "www.newyorkfed.org",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "7 percent, inflation is unquestionably too high."
+        }
+      ],
+      "excerpt": "7 percent, inflation is unquestionably too high.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:43:25.013Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/barr20260929a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260929a.htm",
+      "member": "barr",
+      "bank": "board",
+      "date": "2026-09-29",
+      "title": "Economic Conditions and Monetary Policy",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "What is clear right now is that inflation is too high."
+        }
+      ],
+      "excerpt": "What is clear right now is that inflation is too high.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:43:25.013Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/cook20260928a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260928a.htm",
+      "member": "cook",
+      "bank": "board",
+      "date": "2026-09-28",
+      "title": "An Update on AI and the Economy",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "This increase was to address inflation, which has been too high for too long."
+        }
+      ],
+      "excerpt": "This increase was to address inflation, which has been too high for too long.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.philadelphiafed.org/the-economy/monetary-policy/260924-10th-annual-fintech-conference-speech",
+      "url": "https://www.philadelphiafed.org/the-economy/monetary-policy/260924-10th-annual-fintech-conference-speech",
+      "member": "paulson",
+      "bank": "philadelphia",
+      "date": "2026-09-24",
+      "title": "Opening Remarks",
+      "sourceHost": "www.philadelphiafed.org",
+      "score": 82,
+      "rawScore": 0.6470588235294118,
+      "labels": [
+        "通胀压力仍高",
+        "明确支持收紧",
+        "支持进一步加息"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "Inflation has been too high for too long."
+        },
+        {
+          "label": "明确支持收紧",
+          "direction": "hawk",
+          "strength": 3,
+          "excerpt": "That's why I supported raising the federal funds rate by 25 basis points at last week's meeting."
+        },
+        {
+          "label": "支持进一步加息",
+          "direction": "hawk",
+          "strength": 1.5,
+          "excerpt": "Looking ahead, if conditions evolve as I expect, some modest further tightening may be warranted."
+        }
+      ],
+      "excerpt": "That's why I supported raising the federal funds rate by 25 basis points at last week's meeting.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.richmondfed.org/press_room/speeches/thomas_i_barkin/2026/barkin_speech_20260922",
+      "url": "https://www.richmondfed.org/press_room/speeches/thomas_i_barkin/2026/barkin_speech_20260922",
+      "member": "barkin",
+      "bank": "richmond",
+      "date": "2026-09-22",
+      "title": "Why Hike?",
+      "sourceHost": "www.richmondfed.org",
+      "score": 75,
+      "rawScore": 0.5,
+      "labels": [
+        "明确支持收紧"
+      ],
+      "evidence": [
+        {
+          "label": "明确支持收紧",
+          "direction": "hawk",
+          "strength": 3,
+          "excerpt": "The risks to inflation outweigh the risks to maximum employment."
+        }
+      ],
+      "excerpt": "The risks to inflation outweigh the risks to maximum employment.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:40:15.591Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.chicagofed.org/publications/speeches/2026/sept-21-omfif",
+      "url": "https://www.chicagofed.org/publications/speeches/2026/sept-21-omfif",
+      "member": "goolsbee",
+      "bank": "chicago",
+      "date": "2026-09-21",
+      "title": "OMFIF Event: Monetary Policy in an Uncertain World",
+      "sourceHost": "www.chicagofed.org",
+      "score": 67,
+      "rawScore": 0.3333333333333333,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "And once supply shocks to inflation become persistent, some of the logic behind “looking through” no longer holds."
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 0.5,
+          "excerpt": "So what’s a central bank to do if the economy is hit by an unending string of supply shocks that push inflation…"
+        }
+      ],
+      "excerpt": "And once supply shocks to inflation become persistent, some of the logic behind “looking through” no longer holds.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.kansascityfed.org/speeches/the-strategic-imperative-of-instant-payments-for-community-banks/",
+      "url": "https://www.kansascityfed.org/speeches/the-strategic-imperative-of-instant-payments-for-community-banks/",
+      "member": "schmid",
+      "bank": "kansascity",
+      "date": "2026-09-18",
+      "title": "The Strategic Imperative of Instant Payments for Community Banks",
+      "sourceHost": "www.kansascityfed.org",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "In tightening policy, the FOMC was responding to inflation that has remained too high for too long."
+        }
+      ],
+      "excerpt": "In tightening policy, the FOMC was responding to inflation that has remained too high for too long.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/waller20260903a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20260903a.htm",
+      "member": "waller",
+      "bank": "board",
+      "date": "2026-09-03",
+      "title": "The Economic Outlook and Some Comments on My Policy Communication",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 73,
+      "rawScore": 0.45454545454545453,
+      "labels": [
+        "政策需要收紧",
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "政策需要收紧",
+          "direction": "hawk",
+          "strength": 1.5,
+          "excerpt": "If the incoming data for August show this improvement has been fleeting, then it may be appropriate to raise the policy rate…"
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "I do see some upside risks to inflation."
+        }
+      ],
+      "excerpt": "If the incoming data for August show this improvement has been fleeting, then it may be appropriate to raise the policy rate…",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
+      "member": "barr",
+      "bank": "board",
+      "date": "2026-09-01",
+      "title": "Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 70,
+      "rawScore": 0.4,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "But inflation remains too high—and has been for over five years."
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "And core non-housing services inflation remains elevated."
+        }
+      ],
+      "excerpt": "But inflation remains too high—and has been for over five years.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "member": "warsh",
+      "bank": "board",
+      "date": "2026-08-28",
+      "title": "In Our Time",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 70,
+      "rawScore": 0.4,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "Hard-working Americans are the ones left to deal with inflation that is too high or jobs that suddenly appear less secure."
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "But inflation remained too high."
+        }
+      ],
+      "excerpt": "Hard-working Americans are the ones left to deal with inflation that is too high or jobs that suddenly appear less secure.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-on-the-economy.aspx",
+      "url": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-on-the-economy.aspx",
+      "member": "collins",
+      "bank": "boston",
+      "date": "2026-08-25",
+      "title": "Perspectives on the Economy from Susan M. Collins",
+      "sourceHost": "www.bostonfed.org",
+      "score": 70,
+      "rawScore": 0.4,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "But with inflation still too high, I remain particularly concerned about the price stability portion of the dual mandate."
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "In particular, there are upside risks to inflation from both additional adverse supply shocks, and a stronger-than-expected pace of economic activity."
+        }
+      ],
+      "excerpt": "But with inflation still too high, I remain particularly concerned about the price stability portion of the dual mandate.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.richmondfed.org/press_room/speeches/thomas_i_barkin/2026/barkin_speech_20260813",
+      "url": "https://www.richmondfed.org/press_room/speeches/thomas_i_barkin/2026/barkin_speech_20260813",
+      "member": "barkin",
+      "bank": "richmond",
+      "date": "2026-08-13",
+      "title": "The Mysterious U.S. Economy",
+      "sourceHost": "www.richmondfed.org",
+      "score": 79,
+      "rawScore": 0.5714285714285714,
+      "labels": [
+        "政策需要收紧",
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "政策需要收紧",
+          "direction": "hawk",
+          "strength": 3,
+          "excerpt": "Will the Fed need to raise rates further, or is inflation already on a path down to target?"
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "Inflation has been too high for too long, risking an upward shift in the price expectations of firms and consumers."
+        }
+      ],
+      "excerpt": "Will the Fed need to raise rates further, or is inflation already on a path down to target?",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.atlantafed.org/news-and-events/messages-from-president/2026/08/11/chocolate-factories-small-towns-and-monetary-policy",
+      "url": "https://www.atlantafed.org/news-and-events/messages-from-president/2026/08/11/chocolate-factories-small-towns-and-monetary-policy",
+      "member": "venable",
+      "bank": "atlanta",
+      "date": "2026-08-11",
+      "title": "Chocolate Factories, Small Towns, and Monetary Policy: Blending Data with the Grassroots",
+      "sourceHost": "www.atlantafed.org",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "Inflation is too high, and it has exceeded the FOMC's goal of 2 percent for more than five years."
+        }
+      ],
+      "excerpt": "Inflation is too high, and it has exceeded the FOMC's goal of 2 percent for more than five years.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/cook20260805a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260805a.htm",
+      "member": "cook",
+      "bank": "board",
+      "date": "2026-08-05",
+      "title": "Outlook for the U.S. and Alaskan Economies",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 70,
+      "rawScore": 0.4,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "Thinking first of the price-stability side of our mandate, my assessment is simple: Inflation is too high."
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "As I have described, inflation is too high, and I consider the risks to the inflation side of the dual mandate higher…"
+        }
+      ],
+      "excerpt": "Thinking first of the price-stability side of our mandate, my assessment is simple: Inflation is too high.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.philadelphiafed.org/the-economy/monetary-policy/monetary-policy-perspective-keeping-an-open-mind",
+      "url": "https://www.philadelphiafed.org/the-economy/monetary-policy/monetary-policy-perspective-keeping-an-open-mind",
+      "member": "paulson",
+      "bank": "philadelphia",
+      "date": "2026-08-04",
+      "title": "Monetary Policy Perspective: Keeping an Open Mind",
+      "sourceHost": "www.philadelphiafed.org",
+      "score": 73,
+      "rawScore": 0.45454545454545453,
+      "labels": [
+        "通胀压力仍高",
+        "政策需要收紧"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "So, when I look at current conditions through the lens of our dual mandate, I see a labor market that is relatively…"
+        },
+        {
+          "label": "政策需要收紧",
+          "direction": "hawk",
+          "strength": 1.5,
+          "excerpt": "Even if supply shocks fade and no new shocks hit, this information suggests policy might need to be more restrictive to achieve…"
+        }
+      ],
+      "excerpt": "Even if supply shocks fade and no new shocks hit, this information suggests policy might need to be more restrictive to achieve…",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:40:15.590Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.kansascityfed.org/speeches/agriculture-the-economy-and-the-kansas-city-fed-august-2026/",
+      "url": "https://www.kansascityfed.org/speeches/agriculture-the-economy-and-the-kansas-city-fed-august-2026/",
+      "member": "schmid",
+      "bank": "kansascity",
+      "date": "2026-08-04",
+      "title": "Agriculture, the Economy, and the Kansas City Fed",
+      "sourceHost": "www.kansascityfed.org",
+      "score": 70,
+      "rawScore": 0.4,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "In looking at the economy, my focus is squarely on inflation that remains too high."
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "Inflation has been too high for too long."
+        }
+      ],
+      "excerpt": "In looking at the economy, my focus is squarely on inflation that remains too high.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.minneapolisfed.org/article/2026/statement-on-my-fomc-dissent",
+      "url": "https://www.minneapolisfed.org/article/2026/statement-on-my-fomc-dissent",
+      "member": "kashkari",
+      "bank": "minneapolis",
+      "date": "2026-07-31",
+      "title": "Statement on My FOMC Dissent",
+      "sourceHost": "www.minneapolisfed.org",
+      "score": 81,
+      "rawScore": 0.625,
+      "labels": [
+        "明确支持收紧",
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "明确支持收紧",
+          "direction": "hawk",
+          "strength": 3,
+          "excerpt": "I dissented against the FOMC’s policy action this week because I preferred to raise the target range for the federal funds rate…"
+        },
+        {
+          "label": "明确支持收紧",
+          "direction": "hawk",
+          "strength": 1.5,
+          "excerpt": "But to manage against the risk that high inflation could become entrenched, I would rather tighten policy incrementally as we gather more…"
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 0.5,
+          "excerpt": "If inflation remains elevated, in my view, a potential series of small policy moves would be better than waiting and eventually concluding…"
+        }
+      ],
+      "excerpt": "I dissented against the FOMC’s policy action this week because I preferred to raise the target range for the federal funds rate…",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/jefferson20260716a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260716a.htm",
+      "member": "jefferson",
+      "bank": "board",
+      "date": "2026-07-16",
+      "title": "Navigating Economic Shocks: A Monetary Policymaker’s Perspective",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "The question of whether the recent increase in energy prices will feed into longer-term inflation expectations and result in a persistent rise…"
+        }
+      ],
+      "excerpt": "The question of whether the recent increase in energy prices will feed into longer-term inflation expectations and result in a persistent rise…",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:30:53.719Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.dallasfed.org/news/speeches/logan/2026/lkl260716",
+      "url": "https://www.dallasfed.org/news/speeches/logan/2026/lkl260716",
+      "member": "logan",
+      "bank": "dallas",
+      "date": "2026-07-16",
+      "title": "Remarks on inflation, employment and monetary policy",
+      "sourceHost": "www.dallasfed.org",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "To sum up, inflation has been too high, for too long, and does not appear to be on track all the way…"
+        }
+      ],
+      "excerpt": "To sum up, inflation has been too high, for too long, and does not appear to be on track all the way…",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    },
+    {
+      "id": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260715",
+      "url": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260715",
+      "member": "williams",
+      "bank": "newyork",
+      "date": "2026-07-15",
+      "title": "Stability of Thy Times",
+      "sourceHost": "www.newyorkfed.org",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "Inflation is unquestionably too high at about 4 percent, well above the FOMC’s longer-run goal of 2 percent."
+        }
+      ],
+      "excerpt": "Inflation is unquestionably too high at about 4 percent, well above the FOMC’s longer-run goal of 2 percent.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:28:54.538Z",
+      "impact": null,
+      "impactType": null
+    }
+  ],
+  "changes": [
+    {
+      "id": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
+      "member": "waller",
+      "bank": "board",
+      "date": "2026-10-08",
+      "title": "The Signaling Value of the Summary of Economic Projections",
+      "sourceHost": "www.federalreserve.gov",
+      "score": 84,
+      "rawScore": 0.6842105263157895,
+      "labels": [
+        "通胀压力仍高",
+        "政策需要收紧",
+        "支持进一步加息"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "But then, over the course of the first half of this year, the labor market appeared to stabilize, while progress on inflation…"
+        },
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "When the first inflation reading for August came in hot just before the FOMC's September meeting, it was impossible to deny that…"
+        },
+        {
+          "label": "政策需要收紧",
+          "direction": "hawk",
+          "strength": 3,
+          "excerpt": "The projections submitted at the September meeting showed that a large majority of FOMC participants believe it will be appropriate to raise…"
+        },
+        {
+          "label": "支持进一步加息",
+          "direction": "hawk",
+          "strength": 1.5,
+          "excerpt": "If the economic data continue to come in as expected, I anticipate additional hikes to support a timelier return of inflation to…"
+        }
+      ],
+      "excerpt": "The projections submitted at the September meeting showed that a large majority of FOMC participants believe it will be appropriate to raise…",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:43:25.013Z",
+      "impact": 0.6,
+      "impactType": "leave_one_out"
+    },
+    {
+      "id": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
+      "url": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
+      "member": "musalem",
+      "bank": "stlouis",
+      "date": "2026-10-08",
+      "title": "Moderated Q&A at Bloomberg’s The Future of Fixed Income Event",
+      "sourceHost": "www.stlouisfed.org",
+      "score": 63,
+      "rawScore": 0.25,
+      "labels": [
+        "通胀压力仍高"
+      ],
+      "evidence": [
+        {
+          "label": "通胀压力仍高",
+          "direction": "hawk",
+          "strength": 1,
+          "excerpt": "President Musalem noted inflation remains elevated and is being driven by persistent demand pressures and negative supply shocks."
+        }
+      ],
+      "excerpt": "President Musalem noted inflation remains elevated and is being driven by persistent demand pressures and negative supply shocks.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-12T07:43:25.013Z",
+      "impact": -0.4,
+      "impactType": "leave_one_out"
+    },
+    {
+      "id": "calculation",
+      "member": null,
+      "date": "2026-10-08",
+      "title": "时间权重、覆盖与非线性残差",
+      "impact": -0.2,
+      "calculation": true,
+      "url": null,
+      "labels": [],
+      "excerpt": null
+    }
+  ],
+  "members": [
+    {
+      "id": "warsh",
+      "name": "Kevin Warsh",
+      "zh": "凯文·沃什",
+      "role": "美联储主席",
+      "bank": "board",
+      "weight": 2,
+      "voter": true,
+      "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.4,
+      "score": 70,
+      "documents": 1,
+      "latestDate": "2026-08-28",
+      "latestUrl": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "ageDays": 41,
+      "status": "aged"
+    },
+    {
+      "id": "jefferson",
+      "name": "Philip N. Jefferson",
+      "zh": "菲利普·杰斐逊",
+      "role": "理事会副主席",
+      "bank": "board",
+      "weight": 1.5,
+      "voter": true,
+      "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.38930278719027195,
+      "score": 69,
+      "documents": 2,
+      "latestDate": "2026-10-01",
+      "latestUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
+      "ageDays": 7,
+      "status": "fresh"
+    },
+    {
+      "id": "williams",
+      "name": "John C. Williams",
+      "zh": "约翰·威廉姆斯",
+      "role": "纽约联储主席",
+      "bank": "newyork",
+      "weight": 1.5,
+      "voter": true,
+      "identitySource": "https://www.newyorkfed.org/newsevents/speeches/index.html",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.25,
+      "score": 63,
+      "documents": 2,
+      "latestDate": "2026-09-29",
+      "latestUrl": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260929",
+      "ageDays": 9,
+      "status": "fresh"
+    },
+    {
+      "id": "bowman",
+      "name": "Michelle W. Bowman",
+      "zh": "米歇尔·鲍曼",
+      "role": "负责监管的副主席",
+      "bank": "board",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": null,
+      "score": null,
+      "documents": 0,
+      "latestDate": null,
+      "latestUrl": null,
+      "ageDays": null,
+      "status": "missing"
+    },
+    {
+      "id": "barr",
+      "name": "Michael S. Barr",
+      "zh": "迈克尔·巴尔",
+      "role": "美联储理事",
+      "bank": "board",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.29233734145633894,
+      "score": 65,
+      "documents": 2,
+      "latestDate": "2026-09-29",
+      "latestUrl": "https://www.federalreserve.gov/newsevents/speech/barr20260929a.htm",
+      "ageDays": 9,
+      "status": "fresh"
+    },
+    {
+      "id": "cook",
+      "name": "Lisa D. Cook",
+      "zh": "丽莎·库克",
+      "role": "美联储理事",
+      "bank": "board",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.26070439369316295,
+      "score": 63,
+      "documents": 4,
+      "latestDate": "2026-09-30",
+      "latestUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
+      "ageDays": 8,
+      "status": "fresh"
+    },
+    {
+      "id": "powell",
+      "name": "Jerome H. Powell",
+      "zh": "杰罗姆·鲍威尔",
+      "role": "美联储理事",
+      "bank": "board",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/powell.htm",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": null,
+      "score": null,
+      "documents": 0,
+      "latestDate": null,
+      "latestUrl": null,
+      "ageDays": null,
+      "status": "missing"
+    },
+    {
+      "id": "waller",
+      "name": "Christopher J. Waller",
+      "zh": "克里斯托弗·沃勒",
+      "role": "美联储理事",
+      "bank": "board",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.6204261766449848,
+      "score": 81,
+      "documents": 3,
+      "latestDate": "2026-10-08",
+      "latestUrl": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
+      "ageDays": 0,
+      "status": "fresh"
+    },
+    {
+      "id": "hammack",
+      "name": "Beth M. Hammack",
+      "zh": "贝丝·哈马克",
+      "role": "克利夫兰联储主席",
+      "bank": "cleveland",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.clevelandfed.org/president-and-ceo",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": null,
+      "score": null,
+      "documents": 0,
+      "latestDate": null,
+      "latestUrl": null,
+      "ageDays": null,
+      "status": "missing"
+    },
+    {
+      "id": "kashkari",
+      "name": "Neel Kashkari",
+      "zh": "尼尔·卡什卡利",
+      "role": "明尼阿波利斯联储主席",
+      "bank": "minneapolis",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.minneapolisfed.org/topic/monetary-policy",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.625,
+      "score": 81,
+      "documents": 1,
+      "latestDate": "2026-07-31",
+      "latestUrl": "https://www.minneapolisfed.org/article/2026/statement-on-my-fomc-dissent",
+      "ageDays": 69,
+      "status": "aged"
+    },
+    {
+      "id": "logan",
+      "name": "Lorie K. Logan",
+      "zh": "洛里·洛根",
+      "role": "达拉斯联储主席",
+      "bank": "dallas",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.dallasfed.org/news/speeches/logan",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.25,
+      "score": 63,
+      "documents": 1,
+      "latestDate": "2026-07-16",
+      "latestUrl": "https://www.dallasfed.org/news/speeches/logan/2026/lkl260716",
+      "ageDays": 84,
+      "status": "aged"
+    },
+    {
+      "id": "paulson",
+      "name": "Anna Paulson",
+      "zh": "安娜·保尔森",
+      "role": "费城联储主席",
+      "bank": "philadelphia",
+      "weight": 1,
+      "voter": true,
+      "identitySource": "https://www.philadelphiafed.org/the-economy/speeches-anna-paulson",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.6173221949571805,
+      "score": 81,
+      "documents": 2,
+      "latestDate": "2026-09-24",
+      "latestUrl": "https://www.philadelphiafed.org/the-economy/monetary-policy/260924-10th-annual-fintech-conference-speech",
+      "ageDays": 14,
+      "status": "fresh"
+    },
+    {
+      "id": "collins",
+      "name": "Susan M. Collins",
+      "zh": "苏珊·柯林斯",
+      "role": "波士顿联储主席",
+      "bank": "boston",
+      "weight": 1,
+      "voter": false,
+      "identitySource": "https://www.bostonfed.org/news-and-events/speeches.aspx",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.4,
+      "score": 70,
+      "documents": 1,
+      "latestDate": "2026-08-25",
+      "latestUrl": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-on-the-economy.aspx",
+      "ageDays": 44,
+      "status": "aged"
+    },
+    {
+      "id": "barkin",
+      "name": "Thomas I. Barkin",
+      "zh": "托马斯·巴尔金",
+      "role": "里士满联储主席",
+      "bank": "richmond",
+      "weight": 1,
+      "voter": false,
+      "identitySource": "https://www.richmondfed.org/press_room/speeches",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.5149006090947175,
+      "score": 76,
+      "documents": 2,
+      "latestDate": "2026-09-22",
+      "latestUrl": "https://www.richmondfed.org/press_room/speeches/thomas_i_barkin/2026/barkin_speech_20260922",
+      "ageDays": 16,
+      "status": "fresh"
+    },
+    {
+      "id": "goolsbee",
+      "name": "Austan D. Goolsbee",
+      "zh": "奥斯坦·古尔斯比",
+      "role": "芝加哥联储主席",
+      "bank": "chicago",
+      "weight": 1,
+      "voter": false,
+      "identitySource": "https://www.chicagofed.org/utilities/about-us/office-of-the-president/office-of-the-president-speaking",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.3333333333333333,
+      "score": 67,
+      "documents": 1,
+      "latestDate": "2026-09-21",
+      "latestUrl": "https://www.chicagofed.org/publications/speeches/2026/sept-21-omfif",
+      "ageDays": 17,
+      "status": "fresh"
+    },
+    {
+      "id": "musalem",
+      "name": "Alberto Musalem",
+      "zh": "阿尔贝托·穆萨莱姆",
+      "role": "圣路易斯联储主席",
+      "bank": "stlouis",
+      "weight": 1,
+      "voter": false,
+      "identitySource": "https://www.stlouisfed.org/from-the-president",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.25,
+      "score": 63,
+      "documents": 1,
+      "latestDate": "2026-10-08",
+      "latestUrl": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
+      "ageDays": 0,
+      "status": "fresh"
+    },
+    {
+      "id": "schmid",
+      "name": "Jeffrey Schmid",
+      "zh": "杰弗里·施密德",
+      "role": "堪萨斯城联储主席",
+      "bank": "kansascity",
+      "weight": 1,
+      "voter": false,
+      "identitySource": "https://www.kansascityfed.org/senior-leadership/president/",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.2773638285709535,
+      "score": 64,
+      "documents": 2,
+      "latestDate": "2026-09-18",
+      "latestUrl": "https://www.kansascityfed.org/speeches/the-strategic-imperative-of-instant-payments-for-community-banks/",
+      "ageDays": 20,
+      "status": "fresh"
+    },
+    {
+      "id": "daly",
+      "name": "Mary C. Daly",
+      "zh": "玛丽·戴利",
+      "role": "旧金山联储主席",
+      "bank": "sanfrancisco",
+      "weight": 1,
+      "voter": false,
+      "identitySource": "https://www.frbsf.org/news-and-media/speeches/",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": null,
+      "score": null,
+      "documents": 0,
+      "latestDate": null,
+      "latestUrl": null,
+      "ageDays": null,
+      "status": "missing"
+    },
+    {
+      "id": "venable",
+      "name": "Cheryl Venable",
+      "zh": "谢丽尔·维纳布尔",
+      "role": "亚特兰大联储代理主席",
+      "bank": "atlanta",
+      "weight": 1,
+      "voter": false,
+      "identitySource": "https://www.atlantafed.org/who-we-are/people/executive-leadership-committee/cheryl-venable",
+      "identityVerifiedAt": "2026-10-12T07:43:25.013Z",
+      "rawScore": 0.25,
+      "score": 63,
+      "documents": 1,
+      "latestDate": "2026-08-11",
+      "latestUrl": "https://www.atlantafed.org/news-and-events/messages-from-president/2026/08/11/chocolate-factories-small-towns-and-monetary-policy",
+      "ageDays": 58,
+      "status": "aged"
+    }
+  ],
+  "coverage": {
+    "covered": 15,
+    "total": 19,
+    "voterCovered": 9,
+    "voterTotal": 12
+  },
+  "method": "official-text-rules-1.0",
+  "windowDays": 90,
+  "rosterYear": 2026,
+  "rosterCheckedAt": "2026-10-12T07:43:25.013Z",
+  "rosterSource": "https://www.federalreserve.gov/monetarypolicy/fomc.htm",
+  "historyNote": "根据当前委员名单与当前模型回算；不是当时实时发布的指数。",
+  "rate": {
+    "effectiveDate": "2026-10-08",
+    "type": "EFFR",
+    "percentRate": 3.88,
+    "percentPercentile1": 3.85,
+    "percentPercentile25": 3.87,
+    "percentPercentile75": 3.88,
+    "percentPercentile99": 3.89,
+    "targetRateFrom": 3.75,
+    "targetRateTo": 4,
+    "volumeInBillions": 117,
+    "revisionIndicator": "",
+    "source": "https://markets.newyorkfed.org/api/rates/unsecured/effr/last/5.json",
+    "checkedAt": "2026-10-12T07:43:25.013Z",
+    "history": [
+      {
+        "date": "2026-10-08",
+        "rate": 3.88
+      },
+      {
+        "date": "2026-10-07",
+        "rate": 3.88
+      },
+      {
+        "date": "2026-10-06",
+        "rate": 3.88
+      },
+      {
+        "date": "2026-10-05",
+        "rate": 3.88
+      },
+      {
+        "date": "2026-10-02",
+        "rate": 3.88
+      }
+    ]
+  },
+  "policy": {
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+    "date": "2026-09-16",
+    "title": "FOMC 政策声明",
+    "excerpt": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent,…",
+    "summary": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate. The Committee is continuing its policy of maintaining ample reserves in the banking system.",
+    "voteText": ""
+  },
+  "calendar": {
+    "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "next": {
+      "start": "2026-10-27",
+      "end": "2026-10-28"
+    },
+    "meetings": [
+      {
+        "start": "2026-01-27",
+        "end": "2026-01-28"
+      },
+      {
+        "start": "2026-03-17",
+        "end": "2026-03-18"
+      },
+      {
+        "start": "2026-04-28",
+        "end": "2026-04-29"
+      },
+      {
+        "start": "2026-06-16",
+        "end": "2026-06-17"
+      },
+      {
+        "start": "2026-07-28",
+        "end": "2026-07-29"
+      },
+      {
+        "start": "2026-09-15",
+        "end": "2026-09-16"
+      },
+      {
+        "start": "2026-10-27",
+        "end": "2026-10-28"
+      },
+      {
+        "start": "2026-12-08",
+        "end": "2026-12-09"
+      }
+    ]
+  },
+  "sourceStatus": [
+    {
+      "id": "dallas",
+      "url": "https://www.dallasfed.org/news/speeches/logan",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "philadelphia",
+      "url": "https://www.philadelphiafed.org/the-economy/speeches-anna-paulson",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "board",
+      "url": "https://www.federalreserve.gov/newsevents/2026-speeches.htm",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "minneapolis",
+      "url": "https://www.minneapolisfed.org/topic/monetary-policy",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "boston",
+      "url": "https://www.bostonfed.org/news-and-events/speeches.aspx",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "richmond",
+      "url": "https://www.richmondfed.org/press_room/speeches",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "chicago",
+      "url": "https://www.chicagofed.org/utilities/about-us/office-of-the-president/office-of-the-president-speaking",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "newyork",
+      "url": "https://www.newyorkfed.org/newsevents/speeches/index.html",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "cleveland",
+      "url": "https://www.clevelandfed.org/president-and-ceo",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "kansascity",
+      "url": "https://www.kansascityfed.org/senior-leadership/president/",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "sanfrancisco",
+      "url": "https://www.frbsf.org/news-and-media/speeches/",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "stlouis",
+      "url": "https://www.stlouisfed.org/from-the-president",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "atlanta",
+      "url": "https://www.atlantafed.org/who-we-are/people/executive-leadership-committee/cheryl-venable",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "calendar",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "effr",
+      "url": "https://markets.newyorkfed.org/api/rates/unsecured/effr/last/5.json",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "fomc",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomc.htm",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    },
+    {
+      "id": "statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "status": "ok",
+      "checkedAt": "2026-10-12T07:43:25.013Z"
+    }
+  ],
+  "warnings": [
+    "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-qa-at-the-council-on-foreign-relations: transcript_unavailable",
+    "https://www.minneapolisfed.org/speeches/2026/qa-with-neel-kashkari-at-the-st-paul-area-chamber: transcript_unavailable",
+    "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-at-the-aspen-ideas-festival-2026: transcript_unavailable",
+    "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-qa-at-the-2026-investup-ceo-summit: transcript_unavailable",
+    "https://www.minneapolisfed.org/speeches/2026/conversation-with-neel-kashkari-at-the-2026-bloomberg-invest-conference: transcript_unavailable",
+    "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-chairs-the-mayekawa-lecture-of-the-2026-bank-of-japan-institute-for-monetary-and-economic-studies-conference: transcript_unavailable"
+  ],
+  "collectedAt": "2026-10-12T07:43:25.013Z",
+  "checkedAt": "2026-10-12T07:43:25.013Z",
+  "serverTime": "2026-10-12T07:43:46.710Z",
+  "dataKind": "official_sources_derived_index",
+  "refreshSeconds": 300,
+  "probabilities": null
+}

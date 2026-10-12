@@ -8,3 +8,21 @@
 #committee-section>.footnote{margin-top:14px;text-align:left}
 .signals-sheet .page-card{margin-top:0}
 .method-sheet>.page-card:first-of-type{margin-top:0}
+
+.live-pill{color:#408b7a;background:#e7f2ee;font-size:9px;letter-spacing:0}
+.verified-date{color:#97a3ad;text-align:center;font-size:9px;margin-top:15px;line-height:1.7}
+.member-list{margin-top:0;padding-top:0;padding-bottom:0}
+.member-button{width:100%;text-align:left}
+.member-button:hover{background:#fafbfc}
+.member-role,.member-name{display:block;line-height:1.6}
+.expand-members{width:100%;padding:12px 0;color:#7a8b98;font-size:11px}
+.expand-members span{margin-left:8px}
+.committee-note{text-align:left;margin-top:7px}
+.rate-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:16px;gap:16px}
+.rate-grid span{display:block;color:#9aa6af;font-size:10px}
+.rate-grid strong{display:block;margin-top:7px;font-size:16px;font-weight:550;letter-spacing:-.5px}
+.meeting-row{display:flex;align-items:center;gap:8px;font-size:10px;color:#8c9aa5;padding-top:14px}
+.meeting-row strong{margin-left:auto;color:#6a8190;font-weight:500}
+.probability-link{border-top:1px solid #edf0f3;margin-top:15px;padding-top:12px;font-size:10px}
+.probability-link small{display:block;color:#9aa6af;font-size:9px;margin-top:6px}
+.spinning svg{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
