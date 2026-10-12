@@ -100,6 +100,6 @@ export async function collect({fetchText,prior=null,now=new Date(),bootstrap=fal
 }
 export function publicSnapshot(data,now=new Date()){
  const result=compose(data.documents,data.roster,now);const {documents,...sources}=data;
- const strip=d=>{const {paragraphs,...rest}=d;return rest};
+ const strip=d=>{const {paragraphs,evidence,...rest}=d;return {...rest,evidence:(evidence||[]).map(({excerpt,...rule})=>rule)}};
  return {...result,...sources,roster:undefined,signals:result.signals.map(strip),changes:result.changes.map(strip),sourceStatus:data.sourceStatus.filter(s=>s.id!=='document'),warnings:data.warnings,checkedAt:data.collectedAt,serverTime:now.toISOString(),dataKind:'official_sources_derived_index',refreshSeconds:300,probabilities:null};
 }
