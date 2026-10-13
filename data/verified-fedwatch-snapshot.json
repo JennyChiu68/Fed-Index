@@ -2,9 +2,9 @@
   "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
   "provider": "CME FedWatch",
   "meetingDate": "2026-10-28",
-  "asOf": "2026-10-12T08:35:50.000Z",
-  "asOfLabel": "12 Oct 2026 03:35:50 CT",
-  "checkedAt": "2026-10-12T08:46:46.648Z",
+  "asOf": "2026-10-12T15:25:51.000Z",
+  "asOfLabel": "12 Oct 2026 10:25:51 CT",
+  "checkedAt": "2026-10-13T03:38:20.991Z",
   "currentRange": {
     "lowerBps": 375,
     "upperBps": 400
@@ -91,5 +91,1363 @@
       "hidden": true
     }
   ],
-  "method": "public_fedwatch_current_table"
+  "method": "public_fedwatch_current_table",
+  "meetings": [
+    {
+      "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "provider": "CME FedWatch",
+      "meetingDate": "2026-10-28",
+      "asOf": "2026-10-12T15:25:51.000Z",
+      "asOfLabel": "12 Oct 2026 10:25:51 CT",
+      "checkedAt": "2026-10-13T03:38:20.991Z",
+      "currentRange": {
+        "lowerBps": 375,
+        "upperBps": 400
+      },
+      "cut": 0,
+      "hold": 80.6,
+      "hike": 19.4,
+      "outcomes": [
+        {
+          "lowerBps": 250,
+          "upperBps": 275,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 275,
+          "upperBps": 300,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 300,
+          "upperBps": 325,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 325,
+          "upperBps": 350,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 350,
+          "upperBps": 375,
+          "probability": 0,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 375,
+          "upperBps": 400,
+          "probability": 80.6,
+          "current": true,
+          "hidden": false
+        },
+        {
+          "lowerBps": 400,
+          "upperBps": 425,
+          "probability": 19.4,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 425,
+          "upperBps": 450,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 450,
+          "upperBps": 475,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 475,
+          "upperBps": 500,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 500,
+          "upperBps": 525,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        }
+      ],
+      "method": "public_fedwatch_current_table"
+    },
+    {
+      "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "provider": "CME FedWatch",
+      "meetingDate": "2026-12-09",
+      "asOf": "2026-10-12T15:25:01.000Z",
+      "asOfLabel": "12 Oct 2026 10:25:01 CT",
+      "checkedAt": "2026-10-13T03:38:20.991Z",
+      "currentRange": {
+        "lowerBps": 375,
+        "upperBps": 400
+      },
+      "cut": 0,
+      "hold": 15.3,
+      "hike": 84.7,
+      "outcomes": [
+        {
+          "lowerBps": 125,
+          "upperBps": 150,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 150,
+          "upperBps": 175,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 175,
+          "upperBps": 200,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 200,
+          "upperBps": 225,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 225,
+          "upperBps": 250,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 250,
+          "upperBps": 275,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 275,
+          "upperBps": 300,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 300,
+          "upperBps": 325,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 325,
+          "upperBps": 350,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 350,
+          "upperBps": 375,
+          "probability": 0,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 375,
+          "upperBps": 400,
+          "probability": 15.3,
+          "current": true,
+          "hidden": false
+        },
+        {
+          "lowerBps": 400,
+          "upperBps": 425,
+          "probability": 69,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 425,
+          "upperBps": 450,
+          "probability": 15.7,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 450,
+          "upperBps": 475,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 475,
+          "upperBps": 500,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 500,
+          "upperBps": 525,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 525,
+          "upperBps": 550,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 550,
+          "upperBps": 575,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 575,
+          "upperBps": 600,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 600,
+          "upperBps": 625,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 625,
+          "upperBps": 650,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        }
+      ],
+      "method": "public_fedwatch_current_table"
+    },
+    {
+      "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "provider": "CME FedWatch",
+      "meetingDate": "2027-01-27",
+      "asOf": "2026-10-12T15:25:51.000Z",
+      "asOfLabel": "12 Oct 2026 10:25:51 CT",
+      "checkedAt": "2026-10-13T03:38:20.991Z",
+      "currentRange": {
+        "lowerBps": 375,
+        "upperBps": 400
+      },
+      "cut": 0,
+      "hold": 9.4,
+      "hike": 90.6,
+      "outcomes": [
+        {
+          "lowerBps": 0,
+          "upperBps": 25,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 25,
+          "upperBps": 50,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 50,
+          "upperBps": 75,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 75,
+          "upperBps": 100,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 100,
+          "upperBps": 125,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 125,
+          "upperBps": 150,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 150,
+          "upperBps": 175,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 175,
+          "upperBps": 200,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 200,
+          "upperBps": 225,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 225,
+          "upperBps": 250,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 250,
+          "upperBps": 275,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 275,
+          "upperBps": 300,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 300,
+          "upperBps": 325,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 325,
+          "upperBps": 350,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 350,
+          "upperBps": 375,
+          "probability": 0,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 375,
+          "upperBps": 400,
+          "probability": 9.4,
+          "current": true,
+          "hidden": false
+        },
+        {
+          "lowerBps": 400,
+          "upperBps": 425,
+          "probability": 48,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 425,
+          "upperBps": 450,
+          "probability": 36.5,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 450,
+          "upperBps": 475,
+          "probability": 6.1,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 475,
+          "upperBps": 500,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 500,
+          "upperBps": 525,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 525,
+          "upperBps": 550,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 550,
+          "upperBps": 575,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 575,
+          "upperBps": 600,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 600,
+          "upperBps": 625,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 625,
+          "upperBps": 650,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 650,
+          "upperBps": 675,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 675,
+          "upperBps": 700,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 700,
+          "upperBps": 725,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 725,
+          "upperBps": 750,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 750,
+          "upperBps": 775,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        }
+      ],
+      "method": "public_fedwatch_current_table"
+    },
+    {
+      "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "provider": "CME FedWatch",
+      "meetingDate": "2027-03-17",
+      "asOf": "2026-10-12T15:25:51.000Z",
+      "asOfLabel": "12 Oct 2026 10:25:51 CT",
+      "checkedAt": "2026-10-13T03:38:20.991Z",
+      "currentRange": {
+        "lowerBps": 375,
+        "upperBps": 400
+      },
+      "cut": 0,
+      "hold": 2.8,
+      "hike": 97.2,
+      "outcomes": [
+        {
+          "lowerBps": 0,
+          "upperBps": 25,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 25,
+          "upperBps": 50,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 50,
+          "upperBps": 75,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 75,
+          "upperBps": 100,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 100,
+          "upperBps": 125,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 125,
+          "upperBps": 150,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 150,
+          "upperBps": 175,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 175,
+          "upperBps": 200,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 200,
+          "upperBps": 225,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 225,
+          "upperBps": 250,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 250,
+          "upperBps": 275,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 275,
+          "upperBps": 300,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 300,
+          "upperBps": 325,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 325,
+          "upperBps": 350,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 350,
+          "upperBps": 375,
+          "probability": 0,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 375,
+          "upperBps": 400,
+          "probability": 2.8,
+          "current": true,
+          "hidden": false
+        },
+        {
+          "lowerBps": 400,
+          "upperBps": 425,
+          "probability": 21.1,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 425,
+          "upperBps": 450,
+          "probability": 44.5,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 450,
+          "upperBps": 475,
+          "probability": 27.2,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 475,
+          "upperBps": 500,
+          "probability": 4.3,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 500,
+          "upperBps": 525,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 525,
+          "upperBps": 550,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 550,
+          "upperBps": 575,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 575,
+          "upperBps": 600,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 600,
+          "upperBps": 625,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 625,
+          "upperBps": 650,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 650,
+          "upperBps": 675,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 675,
+          "upperBps": 700,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 700,
+          "upperBps": 725,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 725,
+          "upperBps": 750,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 750,
+          "upperBps": 775,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 775,
+          "upperBps": 800,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 800,
+          "upperBps": 825,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 825,
+          "upperBps": 850,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 850,
+          "upperBps": 875,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 875,
+          "upperBps": 900,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        }
+      ],
+      "method": "public_fedwatch_current_table"
+    },
+    {
+      "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "provider": "CME FedWatch",
+      "meetingDate": "2027-04-28",
+      "asOf": "2026-10-12T15:25:01.000Z",
+      "asOfLabel": "12 Oct 2026 10:25:01 CT",
+      "checkedAt": "2026-10-13T03:38:20.991Z",
+      "currentRange": {
+        "lowerBps": 375,
+        "upperBps": 400
+      },
+      "cut": 0,
+      "hold": 1.8,
+      "hike": 98.2,
+      "outcomes": [
+        {
+          "lowerBps": 0,
+          "upperBps": 25,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 25,
+          "upperBps": 50,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 50,
+          "upperBps": 75,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 75,
+          "upperBps": 100,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 100,
+          "upperBps": 125,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 125,
+          "upperBps": 150,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 150,
+          "upperBps": 175,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 175,
+          "upperBps": 200,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 200,
+          "upperBps": 225,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 225,
+          "upperBps": 250,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 250,
+          "upperBps": 275,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 275,
+          "upperBps": 300,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 300,
+          "upperBps": 325,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 325,
+          "upperBps": 350,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 350,
+          "upperBps": 375,
+          "probability": 0,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 375,
+          "upperBps": 400,
+          "probability": 1.8,
+          "current": true,
+          "hidden": false
+        },
+        {
+          "lowerBps": 400,
+          "upperBps": 425,
+          "probability": 14.5,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 425,
+          "upperBps": 450,
+          "probability": 36,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 450,
+          "upperBps": 475,
+          "probability": 33.5,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 475,
+          "upperBps": 500,
+          "probability": 12.6,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 500,
+          "upperBps": 525,
+          "probability": 1.6,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 525,
+          "upperBps": 550,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 550,
+          "upperBps": 575,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 575,
+          "upperBps": 600,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 600,
+          "upperBps": 625,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 625,
+          "upperBps": 650,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 650,
+          "upperBps": 675,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 675,
+          "upperBps": 700,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 700,
+          "upperBps": 725,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 725,
+          "upperBps": 750,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 750,
+          "upperBps": 775,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 775,
+          "upperBps": 800,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 800,
+          "upperBps": 825,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 825,
+          "upperBps": 850,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 850,
+          "upperBps": 875,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 875,
+          "upperBps": 900,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 900,
+          "upperBps": 925,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 925,
+          "upperBps": 950,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 950,
+          "upperBps": 975,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        }
+      ],
+      "method": "public_fedwatch_current_table"
+    },
+    {
+      "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "provider": "CME FedWatch",
+      "meetingDate": "2027-06-09",
+      "asOf": "2026-10-12T15:25:51.000Z",
+      "asOfLabel": "12 Oct 2026 10:25:51 CT",
+      "checkedAt": "2026-10-13T03:38:20.991Z",
+      "currentRange": {
+        "lowerBps": 375,
+        "upperBps": 400
+      },
+      "cut": 0,
+      "hold": 1.1,
+      "hike": 98.9,
+      "outcomes": [
+        {
+          "lowerBps": 0,
+          "upperBps": 25,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 25,
+          "upperBps": 50,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 50,
+          "upperBps": 75,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 75,
+          "upperBps": 100,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 100,
+          "upperBps": 125,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 125,
+          "upperBps": 150,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 150,
+          "upperBps": 175,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 175,
+          "upperBps": 200,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 200,
+          "upperBps": 225,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 225,
+          "upperBps": 250,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 250,
+          "upperBps": 275,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 275,
+          "upperBps": 300,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 300,
+          "upperBps": 325,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 325,
+          "upperBps": 350,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 350,
+          "upperBps": 375,
+          "probability": 0,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 375,
+          "upperBps": 400,
+          "probability": 1.1,
+          "current": true,
+          "hidden": false
+        },
+        {
+          "lowerBps": 400,
+          "upperBps": 425,
+          "probability": 9.2,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 425,
+          "upperBps": 450,
+          "probability": 27,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 450,
+          "upperBps": 475,
+          "probability": 34.6,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 475,
+          "upperBps": 500,
+          "probability": 21.4,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 500,
+          "upperBps": 525,
+          "probability": 6.2,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 525,
+          "upperBps": 550,
+          "probability": 0.6,
+          "current": false,
+          "hidden": false
+        },
+        {
+          "lowerBps": 550,
+          "upperBps": 575,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 575,
+          "upperBps": 600,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 600,
+          "upperBps": 625,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 625,
+          "upperBps": 650,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 650,
+          "upperBps": 675,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 675,
+          "upperBps": 700,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 700,
+          "upperBps": 725,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 725,
+          "upperBps": 750,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 750,
+          "upperBps": 775,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 775,
+          "upperBps": 800,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 800,
+          "upperBps": 825,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 825,
+          "upperBps": 850,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 850,
+          "upperBps": 875,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 875,
+          "upperBps": 900,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 900,
+          "upperBps": 925,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 925,
+          "upperBps": 950,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        },
+        {
+          "lowerBps": 950,
+          "upperBps": 975,
+          "probability": 0,
+          "current": false,
+          "hidden": true
+        }
+      ],
+      "method": "public_fedwatch_current_table"
+    }
+  ],
+  "availableMeetings": [
+    "2026-10-28",
+    "2026-12-09",
+    "2027-01-27",
+    "2027-03-17",
+    "2027-04-28",
+    "2027-06-09"
+  ],
+  "meetingErrors": []
 }
