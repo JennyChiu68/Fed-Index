@@ -1,10 +1,11 @@
 import seed from '../data/verified-fedwatch-snapshot.json';
 import {collectFedWatch,CME_SOURCE} from './fedwatch.mjs';
+import {selectFedWatchData} from './cache-selection.mjs';
 const TTL=300000;
 const REQUEST_VERSION='public-six-meetings-3';
 let memory=null,inflight=null;
 const meetingRows=data=>data?.meetings?.length?data.meetings:data?.meetingDate?[data]:[];
-async function load(DB){if(memory)return memory;if(DB){try{const r=await DB.prepare('SELECT data FROM source_cache WHERE key = ?').bind('fedwatch').first();if(r)memory=JSON.parse(r.data)}catch{}}return memory||{data:seed,attemptedAt:null,error:null}}
+async function load(DB){if(memory)return memory;let cached=null;if(DB){try{const r=await DB.prepare('SELECT data FROM source_cache WHERE key = ?').bind('fedwatch').first();if(r)cached=JSON.parse(r.data)}catch{}}memory=selectFedWatchData(seed,cached);if(DB&&cached&&Date.parse(seed.checkedAt)>Date.parse(cached.data?.checkedAt))await DB.prepare('INSERT INTO source_cache (key, data, updated_at) VALUES (?, ?, ?) ON CONFLICT(key) DO UPDATE SET data=excluded.data, updated_at=excluded.updated_at').bind('fedwatch',JSON.stringify(memory),memory.attemptedAt).run();return memory;}
 async function refresh(DB,prior,expectedMeeting){
  const attemptedAt=new Date().toISOString();let next;
  try{

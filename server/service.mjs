@@ -2,6 +2,7 @@ import seed from '../data/verified-source-data.json';
 import {collect,publicSnapshot} from './collector.mjs';
 import {ALLOWED_HOSTS} from './sources.mjs';
 import {getFedWatch} from './fedwatch-cache.mjs';
+import {selectOfficialData} from './cache-selection.mjs';
 const TTL=5*60*1000;
 let memory=null,inflight=null,lastRefreshError=null;
 async function officialFetch(url,deadline=Date.now()+23000){
@@ -20,7 +21,7 @@ async function officialFetch(url,deadline=Date.now()+23000){
  }
  throw lastError;
 }
-async function load(DB){if(memory)return memory;if(DB){try{const row=await DB.prepare('SELECT data FROM source_cache WHERE key = ?').bind('official').first();if(row)memory=JSON.parse(row.data)}catch{}}return memory||seed;}
+async function load(DB){if(memory)return memory;let cached=null;if(DB){try{const row=await DB.prepare('SELECT data FROM source_cache WHERE key = ?').bind('official').first();if(row)cached=JSON.parse(row.data)}catch{}}memory=selectOfficialData(seed,cached);if(DB&&(!cached||Date.parse(seed.collectedAt)>Date.parse(cached.collectedAt)))await DB.prepare('INSERT INTO source_cache (key, data, updated_at) VALUES (?, ?, ?) ON CONFLICT(key) DO UPDATE SET data=excluded.data, updated_at=excluded.updated_at').bind('official',JSON.stringify(memory),memory.collectedAt).run();return memory;}
 async function refresh(DB,prior){
  const deadline=Date.now()+23000;const data=await collect({fetchText:url=>officialFetch(url,deadline),prior});const snapshot=publicSnapshot(data);
  // Critical identity failures do not become a new valid reading.
