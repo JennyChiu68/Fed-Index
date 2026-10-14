@@ -1,35 +1,65 @@
 {
-  "checkedAt": "2026-10-14T02:35:26.808Z",
-  "documents": 88,
-  "scoredDocuments": 36,
+  "checkedAt": "2026-10-14T02:58:49.938Z",
+  "documents": 93,
+  "scoredDocuments": 39,
   "coverage": {
-    "covered": 15,
+    "covered": 17,
     "total": 19,
-    "voterCovered": 9,
-    "voterTotal": 12
+    "voterCovered": 10,
+    "voterTotal": 12,
+    "evidenceCovered": 19,
+    "voteCovered": 12
+  },
+  "decision": {
+    "date": "2026-09-16",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+    "voteSource": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260916.htm",
+    "action": "hike",
+    "changeBps": 25,
+    "votedFor": [
+      "warsh",
+      "jefferson",
+      "williams",
+      "bowman",
+      "barr",
+      "cook",
+      "powell",
+      "waller",
+      "hammack",
+      "kashkari",
+      "logan",
+      "paulson"
+    ],
+    "votedAgainst": [],
+    "supportCount": 12,
+    "dissentCount": 0,
+    "totalVotes": 12
   },
   "score": 69,
   "latestEvent": "2026-10-13",
   "sourceFailures": [
     {
-      "id": "newyork",
-      "url": "https://www.newyorkfed.org/newsevents/speeches/index.html"
+      "id": "cleveland",
+      "url": "https://www.clevelandfed.org/"
     },
     {
-      "id": "kansascity",
-      "url": "https://www.kansascityfed.org/senior-leadership/president/"
+      "id": "minneapolis",
+      "url": "https://www.minneapolisfed.org/topic/monetary-policy"
     },
     {
       "id": "document",
-      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm"
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm"
+    },
+    {
+      "id": "document",
+      "url": "https://www.frbsf.org/news-and-media/events/2026/07/mary-c-daly-bank-of-spain-conference/"
     }
   ],
   "missingMembers": [
     "Michelle W. Bowman",
-    "Jerome H. Powell",
-    "Beth M. Hammack",
-    "Mary C. Daly"
+    "Jerome H. Powell"
   ],
+  "missingPolicyEvidence": [],
   "tests": "passed",
   "limitations": [
     "Rule measurement is research-grade and has not been backtested or independently calibrated.",

@@ -2,9 +2,9 @@
   "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
   "provider": "CME FedWatch",
   "meetingDate": "2026-10-28",
-  "asOf": "2026-10-13T14:22:09.000Z",
-  "asOfLabel": "13 Oct 2026 09:22:09 CT",
-  "checkedAt": "2026-10-14T02:33:36.474Z",
+  "asOf": "2026-10-13T14:47:10.000Z",
+  "asOfLabel": "13 Oct 2026 09:47:10 CT",
+  "checkedAt": "2026-10-14T02:59:25.741Z",
   "currentRange": {
     "lowerBps": 375,
     "upperBps": 400
@@ -92,15 +92,14 @@
     }
   ],
   "method": "public_fedwatch_current_table",
-  "refreshError": null,
   "meetings": [
     {
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2026-10-28",
-      "asOf": "2026-10-13T14:22:09.000Z",
-      "asOfLabel": "13 Oct 2026 09:22:09 CT",
-      "checkedAt": "2026-10-14T02:32:27.138Z",
+      "asOf": "2026-10-13T14:47:10.000Z",
+      "asOfLabel": "13 Oct 2026 09:47:10 CT",
+      "checkedAt": "2026-10-14T02:59:25.741Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
@@ -194,9 +193,9 @@
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2026-12-09",
-      "asOf": "2026-10-13T14:22:09.000Z",
-      "asOfLabel": "13 Oct 2026 09:22:09 CT",
-      "checkedAt": "2026-10-14T02:32:27.138Z",
+      "asOf": "2026-10-13T14:47:14.000Z",
+      "asOfLabel": "13 Oct 2026 09:47:14 CT",
+      "checkedAt": "2026-10-14T02:59:25.741Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
@@ -360,9 +359,9 @@
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2027-01-27",
-      "asOf": "2026-10-13T14:22:04.000Z",
-      "asOfLabel": "13 Oct 2026 09:22:04 CT",
-      "checkedAt": "2026-10-14T02:33:36.474Z",
+      "asOf": "2026-10-13T14:47:14.000Z",
+      "asOfLabel": "13 Oct 2026 09:47:14 CT",
+      "checkedAt": "2026-10-14T02:59:25.741Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
@@ -596,9 +595,9 @@
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2027-03-17",
-      "asOf": "2026-10-13T14:22:09.000Z",
-      "asOfLabel": "13 Oct 2026 09:22:09 CT",
-      "checkedAt": "2026-10-14T02:33:36.474Z",
+      "asOf": "2026-10-13T14:47:14.000Z",
+      "asOfLabel": "13 Oct 2026 09:47:14 CT",
+      "checkedAt": "2026-10-14T02:59:25.741Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
@@ -867,9 +866,9 @@
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2027-04-28",
-      "asOf": "2026-10-13T14:22:04.000Z",
-      "asOfLabel": "13 Oct 2026 09:22:04 CT",
-      "checkedAt": "2026-10-14T02:33:36.474Z",
+      "asOf": "2026-10-13T14:47:14.000Z",
+      "asOfLabel": "13 Oct 2026 09:47:14 CT",
+      "checkedAt": "2026-10-14T02:59:25.741Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
@@ -1159,9 +1158,9 @@
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2027-06-09",
-      "asOf": "2026-10-13T14:22:09.000Z",
-      "asOfLabel": "13 Oct 2026 09:22:09 CT",
-      "checkedAt": "2026-10-14T02:33:36.474Z",
+      "asOf": "2026-10-13T14:47:14.000Z",
+      "asOfLabel": "13 Oct 2026 09:47:14 CT",
+      "checkedAt": "2026-10-14T02:59:25.741Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
@@ -1456,5 +1455,6 @@
     "2027-04-28",
     "2027-06-09"
   ],
-  "meetingErrors": []
+  "meetingErrors": [],
+  "refreshError": null
 }

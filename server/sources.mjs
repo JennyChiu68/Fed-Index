@@ -29,15 +29,19 @@ export const INDEXES=[
  {id:'newyork',name:'纽约联储',url:'https://www.newyorkfed.org/newsevents/speeches/index.html',pattern:'/newsevents/speeches/YEAR/wil'},
  {id:'dallas',name:'达拉斯联储',url:'https://www.dallasfed.org/news/speeches/logan',pattern:'/news/speeches/logan/YEAR/'},
  {id:'boston',name:'波士顿联储',url:'https://www.bostonfed.org/news-and-events/speeches.aspx',pattern:'/news-and-events/speeches/YEAR/'},
- {id:'cleveland',name:'克利夫兰联储',url:'https://www.clevelandfed.org/president-and-ceo',pattern:'/collections/speeches/YEAR/'},
+ {id:'cleveland',name:'克利夫兰联储',url:'https://www.clevelandfed.org/president-and-ceo',discoveryUrls:['https://www.clevelandfed.org/'],pattern:'/collections/speeches/YEAR/'},
  {id:'philadelphia',name:'费城联储',url:'https://www.philadelphiafed.org/the-economy/speeches-anna-paulson',pattern:'/the-economy/monetary-policy/'},
  {id:'minneapolis',name:'明尼阿波利斯联储',url:'https://www.minneapolisfed.org/topic/monetary-policy',pattern:'/(?:speeches|article)/YEAR/'},
  {id:'richmond',name:'里士满联储',url:'https://www.richmondfed.org/press_room/speeches',pattern:'/press_room/speeches/thomas_i_barkin/YEAR/'},
  {id:'chicago',name:'芝加哥联储',url:'https://www.chicagofed.org/utilities/about-us/office-of-the-president/office-of-the-president-speaking',pattern:'/publications/speeches/YEAR/'},
  {id:'stlouis',name:'圣路易斯联储',url:'https://www.stlouisfed.org/from-the-president',pattern:'/from-the-president/remarks/YEAR/'},
  {id:'kansascity',name:'堪萨斯城联储',url:'https://www.kansascityfed.org/senior-leadership/president/',pattern:'/speeches/[^/]+/'},
- {id:'sanfrancisco',name:'旧金山联储',url:'https://www.frbsf.org/news-and-media/speeches/',pattern:'/news-and-media/speeches/mary-c-daly/YEAR/'},
+ {id:'sanfrancisco',name:'旧金山联储',url:'https://www.frbsf.org/news-and-media/speeches/',discoveryUrls:['https://www.frbsf.org/news-and-media/','https://www.frbsf.org/news-and-media/events/'],pattern:'/news-and-media/(?:speeches/mary-c-daly|events)/YEAR/'},
  {id:'atlanta',name:'亚特兰大联储',url:'https://www.atlantafed.org/who-we-are/people/executive-leadership-committee/cheryl-venable',pattern:'/research-and-publications/'}
 ];
-export const DIRECT=[{bank:'chicago',member:'goolsbee',url:'https://www.chicagofed.org/publications/speeches/2026/sept-21-omfif',date:'2026-09-21',title:'OMFIF Event: Monetary Policy in an Uncertain World'}];
+export const DIRECT=[
+ {bank:'chicago',member:'goolsbee',url:'https://www.chicagofed.org/publications/speeches/2026/sept-21-omfif',date:'2026-09-21',title:'OMFIF Event: Monetary Policy in an Uncertain World'},
+ {bank:'cleveland',member:'hammack',url:'https://www.clevelandfed.org/collections/speeches/2026/sp-20261012-trimming-the-sails-communicating-my-reaction-function',date:'2026-10-12',title:'Trimming the Sails: Communicating My Reaction Function'},
+ {bank:'sanfrancisco',member:'daly',url:'https://www.frbsf.org/news-and-media/events/2026/08/mary-c-daly-esri-international-conference/',date:'2026-08-05',title:'Keynote Remarks by Mary C. Daly at the ESRI International Conference in Tokyo'}
+];
 export const ALLOWED_HOSTS=new Set(INDEXES.map(s=>new URL(s.url).hostname).concat(['markets.newyorkfed.org']));

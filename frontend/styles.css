@@ -39,3 +39,7 @@
 .fedwatch-date-select{font:inherit;font-size:11px;font-weight:600;max-width:210px;color:var(--ink);background:#f0f4f6;border:1px solid #e7edf1;border-radius:8px;padding:8px 25px 8px 9px;cursor:pointer}.fedwatch-date-select:focus-visible{outline:3px solid #329e89;outline-offset:3px}
 
 .gauge-value .stance{margin-top:12px}.chart-readout:empty{display:none}.probability-meta{border-top:1px solid var(--line);margin-top:14px;padding-top:12px;display:flex;align-items:flex-start;flex-direction:column;gap:7px;font-size:9px;color:#96a3ae;line-height:1.6}
+
+.coverage-stat{padding:0;text-align:center;width:100%;border-radius:6px}.coverage-stat:hover{background:#f7fafb}.decision-baseline{display:flex;width:100%;align-items:center;justify-content:space-between;text-align:left;border-top:1px solid #edf0f3;margin-top:14px;padding:14px 0 0;gap:12px}.decision-baseline>span:first-child{display:flex;flex-direction:column;gap:5px}.decision-baseline small{font-size:10px;color:var(--muted)}.decision-baseline b{font-size:13px;font-weight:650}.decision-baseline>span:last-child{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--muted)}.decision-baseline .icon{width:13px;height:13px}
+
+.coverage-breakdown{display:block;font-size:8px;color:var(--muted);margin-top:5px;white-space:nowrap}

@@ -9,7 +9,8 @@ export function selectOfficialData(seed,cached){
   const prior=documents.get(d.url);
   if(!prior||timestamp(d.fetchedAt)>timestamp(prior.fetchedAt))documents.set(d.url,d);
  }
- return {...latest,documents:[...documents.values()].sort((a,b)=>b.date.localeCompare(a.date))};
+ const policies=[cached.policy,seed.policy].filter(Boolean).sort((a,b)=>String(b.date).localeCompare(String(a.date))||Number(Boolean(b.voteSource))-Number(Boolean(a.voteSource))||timestamp(b.checkedAt)-timestamp(a.checkedAt));
+ return {...latest,...(policies.length?{policy:policies[0]}:{}),documents:[...documents.values()].sort((a,b)=>b.date.localeCompare(a.date))};
 }
 const rows=data=>data?.meetings?.length?data.meetings:data?.meetingDate?[data]:[];
 export function selectFedWatchData(seed,cached){
