@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-13T04:02:13.646Z",
+  "checkedAt": "2026-10-14T02:35:26.808Z",
   "documents": 88,
   "scoredDocuments": 36,
   "coverage": {
@@ -9,8 +9,21 @@
     "voterTotal": 12
   },
   "score": 69,
-  "latestEvent": "2026-10-08",
-  "sourceFailures": [],
+  "latestEvent": "2026-10-13",
+  "sourceFailures": [
+    {
+      "id": "newyork",
+      "url": "https://www.newyorkfed.org/newsevents/speeches/index.html"
+    },
+    {
+      "id": "kansascity",
+      "url": "https://www.kansascityfed.org/senior-leadership/president/"
+    },
+    {
+      "id": "document",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm"
+    }
+  ],
   "missingMembers": [
     "Michelle W. Bowman",
     "Jerome H. Powell",

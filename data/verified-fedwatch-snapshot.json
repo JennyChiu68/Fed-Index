@@ -2,16 +2,16 @@
   "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
   "provider": "CME FedWatch",
   "meetingDate": "2026-10-28",
-  "asOf": "2026-10-12T15:50:03.000Z",
-  "asOfLabel": "12 Oct 2026 10:50:03 CT",
-  "checkedAt": "2026-10-13T04:00:02.865Z",
+  "asOf": "2026-10-13T14:22:09.000Z",
+  "asOfLabel": "13 Oct 2026 09:22:09 CT",
+  "checkedAt": "2026-10-14T02:33:36.474Z",
   "currentRange": {
     "lowerBps": 375,
     "upperBps": 400
   },
   "cut": 0,
-  "hold": 80.6,
-  "hike": 19.4,
+  "hold": 77.3,
+  "hike": 22.7,
   "outcomes": [
     {
       "lowerBps": 250,
@@ -51,14 +51,14 @@
     {
       "lowerBps": 375,
       "upperBps": 400,
-      "probability": 80.6,
+      "probability": 77.3,
       "current": true,
       "hidden": false
     },
     {
       "lowerBps": 400,
       "upperBps": 425,
-      "probability": 19.4,
+      "probability": 22.7,
       "current": false,
       "hidden": false
     },
@@ -92,21 +92,22 @@
     }
   ],
   "method": "public_fedwatch_current_table",
+  "refreshError": null,
   "meetings": [
     {
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2026-10-28",
-      "asOf": "2026-10-12T15:50:03.000Z",
-      "asOfLabel": "12 Oct 2026 10:50:03 CT",
-      "checkedAt": "2026-10-13T04:00:02.865Z",
+      "asOf": "2026-10-13T14:22:09.000Z",
+      "asOfLabel": "13 Oct 2026 09:22:09 CT",
+      "checkedAt": "2026-10-14T02:32:27.138Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
       },
       "cut": 0,
-      "hold": 80.6,
-      "hike": 19.4,
+      "hold": 77.3,
+      "hike": 22.7,
       "outcomes": [
         {
           "lowerBps": 250,
@@ -146,14 +147,14 @@
         {
           "lowerBps": 375,
           "upperBps": 400,
-          "probability": 80.6,
+          "probability": 77.3,
           "current": true,
           "hidden": false
         },
         {
           "lowerBps": 400,
           "upperBps": 425,
-          "probability": 19.4,
+          "probability": 22.7,
           "current": false,
           "hidden": false
         },
@@ -186,22 +187,23 @@
           "hidden": true
         }
       ],
-      "method": "public_fedwatch_current_table"
+      "method": "public_fedwatch_current_table",
+      "refreshError": null
     },
     {
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2026-12-09",
-      "asOf": "2026-10-12T15:45:58.000Z",
-      "asOfLabel": "12 Oct 2026 10:45:58 CT",
-      "checkedAt": "2026-10-13T04:00:02.865Z",
+      "asOf": "2026-10-13T14:22:09.000Z",
+      "asOfLabel": "13 Oct 2026 09:22:09 CT",
+      "checkedAt": "2026-10-14T02:32:27.138Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
       },
       "cut": 0,
-      "hold": 15.3,
-      "hike": 84.7,
+      "hold": 12.2,
+      "hike": 87.8,
       "outcomes": [
         {
           "lowerBps": 125,
@@ -276,21 +278,21 @@
         {
           "lowerBps": 375,
           "upperBps": 400,
-          "probability": 15.3,
+          "probability": 12.2,
           "current": true,
           "hidden": false
         },
         {
           "lowerBps": 400,
           "upperBps": 425,
-          "probability": 69,
+          "probability": 68.7,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 425,
           "upperBps": 450,
-          "probability": 15.7,
+          "probability": 19.1,
           "current": false,
           "hidden": false
         },
@@ -351,22 +353,23 @@
           "hidden": true
         }
       ],
-      "method": "public_fedwatch_current_table"
+      "method": "public_fedwatch_current_table",
+      "refreshError": null
     },
     {
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2027-01-27",
-      "asOf": "2026-10-12T15:50:03.000Z",
-      "asOfLabel": "12 Oct 2026 10:50:03 CT",
-      "checkedAt": "2026-10-13T04:00:02.865Z",
+      "asOf": "2026-10-13T14:22:04.000Z",
+      "asOfLabel": "13 Oct 2026 09:22:04 CT",
+      "checkedAt": "2026-10-14T02:33:36.474Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
       },
       "cut": 0,
-      "hold": 9.4,
-      "hike": 90.6,
+      "hold": 6.7,
+      "hike": 93.3,
       "outcomes": [
         {
           "lowerBps": 0,
@@ -476,28 +479,28 @@
         {
           "lowerBps": 375,
           "upperBps": 400,
-          "probability": 9.4,
+          "probability": 6.7,
           "current": true,
           "hidden": false
         },
         {
           "lowerBps": 400,
           "upperBps": 425,
-          "probability": 48,
+          "probability": 43.4,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 425,
           "upperBps": 450,
-          "probability": 36.5,
+          "probability": 41.3,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 450,
           "upperBps": 475,
-          "probability": 6.1,
+          "probability": 8.6,
           "current": false,
           "hidden": false
         },
@@ -586,22 +589,23 @@
           "hidden": true
         }
       ],
-      "method": "public_fedwatch_current_table"
+      "method": "public_fedwatch_current_table",
+      "refreshError": null
     },
     {
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2027-03-17",
-      "asOf": "2026-10-12T15:45:58.000Z",
-      "asOfLabel": "12 Oct 2026 10:45:58 CT",
-      "checkedAt": "2026-10-13T04:00:02.865Z",
+      "asOf": "2026-10-13T14:22:09.000Z",
+      "asOfLabel": "13 Oct 2026 09:22:09 CT",
+      "checkedAt": "2026-10-14T02:33:36.474Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
       },
       "cut": 0,
-      "hold": 2.8,
-      "hike": 97.2,
+      "hold": 2,
+      "hike": 98,
       "outcomes": [
         {
           "lowerBps": 0,
@@ -711,35 +715,35 @@
         {
           "lowerBps": 375,
           "upperBps": 400,
-          "probability": 2.8,
+          "probability": 2,
           "current": true,
           "hidden": false
         },
         {
           "lowerBps": 400,
           "upperBps": 425,
-          "probability": 21.1,
+          "probability": 17.5,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 425,
           "upperBps": 450,
-          "probability": 44.5,
+          "probability": 42.8,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 450,
           "upperBps": 475,
-          "probability": 27.2,
+          "probability": 31.7,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 475,
           "upperBps": 500,
-          "probability": 4.3,
+          "probability": 6,
           "current": false,
           "hidden": false
         },
@@ -856,22 +860,23 @@
           "hidden": true
         }
       ],
-      "method": "public_fedwatch_current_table"
+      "method": "public_fedwatch_current_table",
+      "refreshError": null
     },
     {
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2027-04-28",
-      "asOf": "2026-10-12T15:50:03.000Z",
-      "asOfLabel": "12 Oct 2026 10:50:03 CT",
-      "checkedAt": "2026-10-13T04:00:02.865Z",
+      "asOf": "2026-10-13T14:22:04.000Z",
+      "asOfLabel": "13 Oct 2026 09:22:04 CT",
+      "checkedAt": "2026-10-14T02:33:36.474Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
       },
       "cut": 0,
-      "hold": 1.8,
-      "hike": 98.2,
+      "hold": 1.2,
+      "hike": 98.8,
       "outcomes": [
         {
           "lowerBps": 0,
@@ -981,42 +986,42 @@
         {
           "lowerBps": 375,
           "upperBps": 400,
-          "probability": 1.8,
+          "probability": 1.2,
           "current": true,
           "hidden": false
         },
         {
           "lowerBps": 400,
           "upperBps": 425,
-          "probability": 14.5,
+          "probability": 11.7,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 425,
           "upperBps": 450,
-          "probability": 36,
+          "probability": 33.3,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 450,
           "upperBps": 475,
-          "probability": 33.5,
+          "probability": 35.8,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 475,
           "upperBps": 500,
-          "probability": 12.6,
+          "probability": 15.6,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 500,
           "upperBps": 525,
-          "probability": 1.6,
+          "probability": 2.3,
           "current": false,
           "hidden": false
         },
@@ -1147,22 +1152,23 @@
           "hidden": true
         }
       ],
-      "method": "public_fedwatch_current_table"
+      "method": "public_fedwatch_current_table",
+      "refreshError": null
     },
     {
       "source": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "provider": "CME FedWatch",
       "meetingDate": "2027-06-09",
-      "asOf": "2026-10-12T15:45:58.000Z",
-      "asOfLabel": "12 Oct 2026 10:45:58 CT",
-      "checkedAt": "2026-10-13T04:00:02.865Z",
+      "asOf": "2026-10-13T14:22:09.000Z",
+      "asOfLabel": "13 Oct 2026 09:22:09 CT",
+      "checkedAt": "2026-10-14T02:33:36.474Z",
       "currentRange": {
         "lowerBps": 375,
         "upperBps": 400
       },
       "cut": 0,
-      "hold": 1.1,
-      "hike": 98.9,
+      "hold": 0.8,
+      "hike": 99.2,
       "outcomes": [
         {
           "lowerBps": 0,
@@ -1272,49 +1278,49 @@
         {
           "lowerBps": 375,
           "upperBps": 400,
-          "probability": 1.1,
+          "probability": 0.8,
           "current": true,
           "hidden": false
         },
         {
           "lowerBps": 400,
           "upperBps": 425,
-          "probability": 9.2,
+          "probability": 7.6,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 425,
           "upperBps": 450,
-          "probability": 27,
+          "probability": 24.9,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 450,
           "upperBps": 475,
-          "probability": 34.6,
+          "probability": 34.8,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 475,
           "upperBps": 500,
-          "probability": 21.3,
+          "probability": 23.5,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 500,
           "upperBps": 525,
-          "probability": 6.2,
+          "probability": 7.5,
           "current": false,
           "hidden": false
         },
         {
           "lowerBps": 525,
           "upperBps": 550,
-          "probability": 0.6,
+          "probability": 0.9,
           "current": false,
           "hidden": false
         },
@@ -1438,7 +1444,8 @@
           "hidden": true
         }
       ],
-      "method": "public_fedwatch_current_table"
+      "method": "public_fedwatch_current_table",
+      "refreshError": null
     }
   ],
   "availableMeetings": [

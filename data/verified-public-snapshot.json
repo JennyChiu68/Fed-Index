@@ -4,47 +4,40 @@
   "week": 69,
   "change": 0,
   "weekChange": 0,
-  "eventDate": "2026-10-08",
-  "previousDate": "2026-10-01",
+  "eventDate": "2026-10-13",
+  "previousDate": "2026-10-08",
   "history": [
     {
-      "date": "2026-05-09",
-      "score": 53,
+      "date": "2026-05-19",
+      "score": 58,
       "covered": 3,
       "kind": "reconstructed",
       "method": "official-text-rules-1.0"
     },
     {
-      "date": "2026-05-19",
-      "score": 56,
-      "covered": 4,
-      "kind": "reconstructed",
-      "method": "official-text-rules-1.0"
-    },
-    {
       "date": "2026-05-22",
-      "score": 62,
+      "score": 63,
       "covered": 4,
       "kind": "reconstructed",
       "method": "official-text-rules-1.0"
     },
     {
       "date": "2026-05-27",
-      "score": 58,
+      "score": 59,
       "covered": 6,
       "kind": "reconstructed",
       "method": "official-text-rules-1.0"
     },
     {
       "date": "2026-05-29",
-      "score": 57,
+      "score": 58,
       "covered": 8,
       "kind": "reconstructed",
       "method": "official-text-rules-1.0"
     },
     {
       "date": "2026-06-02",
-      "score": 58,
+      "score": 59,
       "covered": 9,
       "kind": "reconstructed",
       "method": "official-text-rules-1.0"
@@ -195,9 +188,43 @@
       "covered": 15,
       "kind": "reconstructed",
       "method": "official-text-rules-1.0"
+    },
+    {
+      "date": "2026-10-13",
+      "score": 69,
+      "covered": 15,
+      "kind": "reconstructed",
+      "method": "official-text-rules-1.0"
     }
   ],
   "signals": [
+    {
+      "id": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-economy-banking-landscape.aspx",
+      "url": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-economy-banking-landscape.aspx",
+      "member": "collins",
+      "bank": "boston",
+      "date": "2026-10-13",
+      "title": "Perspectives on the Economy and the Banking Landscape",
+      "sourceHost": "www.bostonfed.org",
+      "score": 75,
+      "rawScore": 0.5,
+      "labels": [
+        "政策需要收紧"
+      ],
+      "excerpt": "She said she currently expects \"it will be appropriate to raise rates a bit further before the end of the year.",
+      "method": "official-text-rules-1.0",
+      "status": "scored",
+      "fetchedAt": "2026-10-14T02:34:23.410Z",
+      "impact": 0.2,
+      "impactType": "leave_one_out",
+      "evidence": [
+        {
+          "label": "政策需要收紧",
+          "direction": "hawk",
+          "strength": 3
+        }
+      ]
+    },
     {
       "id": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
       "url": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
@@ -214,9 +241,9 @@
       "excerpt": "President Musalem noted inflation remains elevated and is being driven by persistent demand pressures and negative supply shocks.",
       "method": "official-text-rules-1.0",
       "status": "scored",
-      "fetchedAt": "2026-10-13T03:59:59.230Z",
-      "impact": -0.4,
-      "impactType": "leave_one_out",
+      "fetchedAt": "2026-10-14T02:34:23.410Z",
+      "impact": null,
+      "impactType": null,
       "evidence": [
         {
           "label": "通胀压力仍高",
@@ -243,9 +270,9 @@
       "excerpt": "The projections submitted at the September meeting showed that a large majority of FOMC participants believe it will be appropriate to raise…",
       "method": "official-text-rules-1.0",
       "status": "scored",
-      "fetchedAt": "2026-10-13T03:59:59.230Z",
-      "impact": 0.6,
-      "impactType": "leave_one_out",
+      "fetchedAt": "2026-10-14T02:34:23.410Z",
+      "impact": null,
+      "impactType": null,
       "evidence": [
         {
           "label": "通胀压力仍高",
@@ -285,7 +312,7 @@
       "excerpt": "However, inflation is too high and has exceeded the Federal Reserve's 2 percent target for more than five years.",
       "method": "official-text-rules-1.0",
       "status": "scored",
-      "fetchedAt": "2026-10-13T03:59:59.230Z",
+      "fetchedAt": "2026-10-14T02:34:23.410Z",
       "impact": null,
       "impactType": null,
       "evidence": [
@@ -911,111 +938,40 @@
           "strength": 1
         }
       ]
-    },
-    {
-      "id": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260715",
-      "url": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260715",
-      "member": "williams",
-      "bank": "newyork",
-      "date": "2026-07-15",
-      "title": "Stability of Thy Times",
-      "sourceHost": "www.newyorkfed.org",
-      "score": 63,
-      "rawScore": 0.25,
-      "labels": [
-        "通胀压力仍高"
-      ],
-      "excerpt": "Inflation is unquestionably too high at about 4 percent, well above the FOMC’s longer-run goal of 2 percent.",
-      "method": "official-text-rules-1.0",
-      "status": "scored",
-      "fetchedAt": "2026-10-12T07:28:54.538Z",
-      "impact": null,
-      "impactType": null,
-      "evidence": [
-        {
-          "label": "通胀压力仍高",
-          "direction": "hawk",
-          "strength": 1
-        }
-      ]
     }
   ],
   "changes": [
     {
-      "id": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
-      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
-      "member": "waller",
-      "bank": "board",
-      "date": "2026-10-08",
-      "title": "The Signaling Value of the Summary of Economic Projections",
-      "sourceHost": "www.federalreserve.gov",
-      "score": 84,
-      "rawScore": 0.6842105263157895,
+      "id": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-economy-banking-landscape.aspx",
+      "url": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-economy-banking-landscape.aspx",
+      "member": "collins",
+      "bank": "boston",
+      "date": "2026-10-13",
+      "title": "Perspectives on the Economy and the Banking Landscape",
+      "sourceHost": "www.bostonfed.org",
+      "score": 75,
+      "rawScore": 0.5,
       "labels": [
-        "通胀压力仍高",
-        "政策需要收紧",
-        "支持进一步加息"
+        "政策需要收紧"
       ],
-      "excerpt": "The projections submitted at the September meeting showed that a large majority of FOMC participants believe it will be appropriate to raise…",
+      "excerpt": "She said she currently expects \"it will be appropriate to raise rates a bit further before the end of the year.",
       "method": "official-text-rules-1.0",
       "status": "scored",
-      "fetchedAt": "2026-10-13T03:59:59.230Z",
-      "impact": 0.6,
+      "fetchedAt": "2026-10-14T02:34:23.410Z",
+      "impact": 0.2,
       "impactType": "leave_one_out",
       "evidence": [
-        {
-          "label": "通胀压力仍高",
-          "direction": "hawk",
-          "strength": 1
-        },
-        {
-          "label": "通胀压力仍高",
-          "direction": "hawk",
-          "strength": 1
-        },
         {
           "label": "政策需要收紧",
           "direction": "hawk",
           "strength": 3
-        },
-        {
-          "label": "支持进一步加息",
-          "direction": "hawk",
-          "strength": 1.5
-        }
-      ]
-    },
-    {
-      "id": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
-      "url": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
-      "member": "musalem",
-      "bank": "stlouis",
-      "date": "2026-10-08",
-      "title": "Moderated Q&A at Bloomberg’s The Future of Fixed Income Event",
-      "sourceHost": "www.stlouisfed.org",
-      "score": 63,
-      "rawScore": 0.25,
-      "labels": [
-        "通胀压力仍高"
-      ],
-      "excerpt": "President Musalem noted inflation remains elevated and is being driven by persistent demand pressures and negative supply shocks.",
-      "method": "official-text-rules-1.0",
-      "status": "scored",
-      "fetchedAt": "2026-10-13T03:59:59.230Z",
-      "impact": -0.4,
-      "impactType": "leave_one_out",
-      "evidence": [
-        {
-          "label": "通胀压力仍高",
-          "direction": "hawk",
-          "strength": 1
         }
       ]
     },
     {
       "id": "calculation",
       "member": null,
-      "date": "2026-10-08",
+      "date": "2026-10-13",
       "title": "时间权重、覆盖与非线性残差",
       "impact": -0.2,
       "calculation": true,
@@ -1035,13 +991,13 @@
       "weight": 2,
       "voter": true,
       "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.4,
       "score": 70,
       "documents": 1,
       "latestDate": "2026-08-28",
       "latestUrl": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
-      "ageDays": 41,
+      "ageDays": 46,
       "status": "aged"
     },
     {
@@ -1053,13 +1009,13 @@
       "weight": 1.5,
       "voter": true,
       "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
-      "rawScore": 0.38930278719027195,
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
+      "rawScore": 0.3893027871902719,
       "score": 69,
       "documents": 2,
       "latestDate": "2026-10-01",
       "latestUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
-      "ageDays": 7,
+      "ageDays": 12,
       "status": "fresh"
     },
     {
@@ -1071,13 +1027,13 @@
       "weight": 1.5,
       "voter": true,
       "identitySource": "https://www.newyorkfed.org/newsevents/speeches/index.html",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.25,
       "score": 63,
-      "documents": 2,
+      "documents": 1,
       "latestDate": "2026-09-29",
       "latestUrl": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260929",
-      "ageDays": 9,
+      "ageDays": 14,
       "status": "fresh"
     },
     {
@@ -1089,7 +1045,7 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": null,
       "score": null,
       "documents": 0,
@@ -1107,13 +1063,13 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
-      "rawScore": 0.29233734145633894,
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
+      "rawScore": 0.292337341456339,
       "score": 65,
       "documents": 2,
       "latestDate": "2026-09-29",
       "latestUrl": "https://www.federalreserve.gov/newsevents/speech/barr20260929a.htm",
-      "ageDays": 9,
+      "ageDays": 14,
       "status": "fresh"
     },
     {
@@ -1125,13 +1081,13 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
-      "rawScore": 0.26070439369316295,
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
+      "rawScore": 0.2610976687802149,
       "score": 63,
-      "documents": 4,
+      "documents": 3,
       "latestDate": "2026-09-30",
       "latestUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
-      "ageDays": 8,
+      "ageDays": 13,
       "status": "fresh"
     },
     {
@@ -1143,7 +1099,7 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/powell.htm",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": null,
       "score": null,
       "documents": 0,
@@ -1161,13 +1117,13 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
-      "rawScore": 0.6204261766449848,
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
+      "rawScore": 0.629674711193745,
       "score": 81,
-      "documents": 3,
+      "documents": 2,
       "latestDate": "2026-10-08",
       "latestUrl": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
-      "ageDays": 0,
+      "ageDays": 5,
       "status": "fresh"
     },
     {
@@ -1179,7 +1135,7 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.clevelandfed.org/president-and-ceo",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": null,
       "score": null,
       "documents": 0,
@@ -1197,13 +1153,13 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.minneapolisfed.org/topic/monetary-policy",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.625,
       "score": 81,
       "documents": 1,
       "latestDate": "2026-07-31",
       "latestUrl": "https://www.minneapolisfed.org/article/2026/statement-on-my-fomc-dissent",
-      "ageDays": 69,
+      "ageDays": 74,
       "status": "aged"
     },
     {
@@ -1215,13 +1171,13 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.dallasfed.org/news/speeches/logan",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.25,
       "score": 63,
       "documents": 1,
       "latestDate": "2026-07-16",
       "latestUrl": "https://www.dallasfed.org/news/speeches/logan/2026/lkl260716",
-      "ageDays": 84,
+      "ageDays": 89,
       "status": "aged"
     },
     {
@@ -1233,13 +1189,13 @@
       "weight": 1,
       "voter": true,
       "identitySource": "https://www.philadelphiafed.org/the-economy/speeches-anna-paulson",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
-      "rawScore": 0.6173221949571805,
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
+      "rawScore": 0.6173221949571804,
       "score": 81,
       "documents": 2,
       "latestDate": "2026-09-24",
       "latestUrl": "https://www.philadelphiafed.org/the-economy/monetary-policy/260924-10th-annual-fintech-conference-speech",
-      "ageDays": 14,
+      "ageDays": 19,
       "status": "fresh"
     },
     {
@@ -1251,14 +1207,14 @@
       "weight": 1,
       "voter": false,
       "identitySource": "https://www.bostonfed.org/news-and-events/speeches.aspx",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
-      "rawScore": 0.4,
-      "score": 70,
-      "documents": 1,
-      "latestDate": "2026-08-25",
-      "latestUrl": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-on-the-economy.aspx",
-      "ageDays": 44,
-      "status": "aged"
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
+      "rawScore": 0.48366257604866203,
+      "score": 74,
+      "documents": 2,
+      "latestDate": "2026-10-13",
+      "latestUrl": "https://www.bostonfed.org/news-and-events/speeches/2026/perspectives-economy-banking-landscape.aspx",
+      "ageDays": 0,
+      "status": "fresh"
     },
     {
       "id": "barkin",
@@ -1269,13 +1225,13 @@
       "weight": 1,
       "voter": false,
       "identitySource": "https://www.richmondfed.org/press_room/speeches",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.5149006090947175,
       "score": 76,
       "documents": 2,
       "latestDate": "2026-09-22",
       "latestUrl": "https://www.richmondfed.org/press_room/speeches/thomas_i_barkin/2026/barkin_speech_20260922",
-      "ageDays": 16,
+      "ageDays": 21,
       "status": "fresh"
     },
     {
@@ -1287,13 +1243,13 @@
       "weight": 1,
       "voter": false,
       "identitySource": "https://www.chicagofed.org/utilities/about-us/office-of-the-president/office-of-the-president-speaking",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.3333333333333333,
       "score": 67,
       "documents": 1,
       "latestDate": "2026-09-21",
       "latestUrl": "https://www.chicagofed.org/publications/speeches/2026/sept-21-omfif",
-      "ageDays": 17,
+      "ageDays": 22,
       "status": "fresh"
     },
     {
@@ -1305,13 +1261,13 @@
       "weight": 1,
       "voter": false,
       "identitySource": "https://www.stlouisfed.org/from-the-president",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.25,
       "score": 63,
       "documents": 1,
       "latestDate": "2026-10-08",
       "latestUrl": "https://www.stlouisfed.org/from-the-president/remarks/2026/moderated-qa-bloomberg-event-oct-8-2026",
-      "ageDays": 0,
+      "ageDays": 5,
       "status": "fresh"
     },
     {
@@ -1323,13 +1279,13 @@
       "weight": 1,
       "voter": false,
       "identitySource": "https://www.kansascityfed.org/senior-leadership/president/",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.2773638285709535,
       "score": 64,
       "documents": 2,
       "latestDate": "2026-09-18",
       "latestUrl": "https://www.kansascityfed.org/speeches/the-strategic-imperative-of-instant-payments-for-community-banks/",
-      "ageDays": 20,
+      "ageDays": 25,
       "status": "fresh"
     },
     {
@@ -1341,7 +1297,7 @@
       "weight": 1,
       "voter": false,
       "identitySource": "https://www.frbsf.org/news-and-media/speeches/",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": null,
       "score": null,
       "documents": 0,
@@ -1359,13 +1315,13 @@
       "weight": 1,
       "voter": false,
       "identitySource": "https://www.atlantafed.org/who-we-are/people/executive-leadership-committee/cheryl-venable",
-      "identityVerifiedAt": "2026-10-13T03:59:59.230Z",
+      "identityVerifiedAt": "2026-10-14T02:34:23.410Z",
       "rawScore": 0.25,
       "score": 63,
       "documents": 1,
       "latestDate": "2026-08-11",
       "latestUrl": "https://www.atlantafed.org/news-and-events/messages-from-president/2026/08/11/chocolate-factories-small-towns-and-monetary-policy",
-      "ageDays": 58,
+      "ageDays": 63,
       "status": "aged"
     }
   ],
@@ -1378,11 +1334,11 @@
   "method": "official-text-rules-1.0",
   "windowDays": 90,
   "rosterYear": 2026,
-  "rosterCheckedAt": "2026-10-13T03:59:59.230Z",
+  "rosterCheckedAt": "2026-10-14T02:34:23.410Z",
   "rosterSource": "https://www.federalreserve.gov/monetarypolicy/fomc.htm",
   "historyNote": "根据当前委员名单与当前模型回算；不是当时实时发布的指数。",
   "rate": {
-    "effectiveDate": "2026-10-08",
+    "effectiveDate": "2026-10-09",
     "type": "EFFR",
     "percentRate": 3.88,
     "percentPercentile1": 3.85,
@@ -1391,11 +1347,15 @@
     "percentPercentile99": 3.89,
     "targetRateFrom": 3.75,
     "targetRateTo": 4,
-    "volumeInBillions": 117,
+    "volumeInBillions": 110,
     "revisionIndicator": "",
     "source": "https://markets.newyorkfed.org/api/rates/unsecured/effr/last/5.json",
-    "checkedAt": "2026-10-13T03:59:59.230Z",
+    "checkedAt": "2026-10-14T02:34:23.410Z",
     "history": [
+      {
+        "date": "2026-10-09",
+        "rate": 3.88
+      },
       {
         "date": "2026-10-08",
         "rate": 3.88
@@ -1410,10 +1370,6 @@
       },
       {
         "date": "2026-10-05",
-        "rate": 3.88
-      },
-      {
-        "date": "2026-10-02",
         "rate": 3.88
       }
     ]
@@ -1472,116 +1428,118 @@
       "id": "effr",
       "url": "https://markets.newyorkfed.org/api/rates/unsecured/effr/last/5.json",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
       "id": "fomc",
       "url": "https://www.federalreserve.gov/monetarypolicy/fomc.htm",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
       "id": "calendar",
       "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
       "id": "philadelphia",
       "url": "https://www.philadelphiafed.org/the-economy/speeches-anna-paulson",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
-    },
-    {
-      "id": "dallas",
-      "url": "https://www.dallasfed.org/news/speeches/logan",
-      "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
       "id": "board",
       "url": "https://www.federalreserve.gov/newsevents/2026-speeches.htm",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
-      "id": "newyork",
-      "url": "https://www.newyorkfed.org/newsevents/speeches/index.html",
+      "id": "dallas",
+      "url": "https://www.dallasfed.org/news/speeches/logan",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
       "id": "boston",
       "url": "https://www.bostonfed.org/news-and-events/speeches.aspx",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
       "id": "cleveland",
       "url": "https://www.clevelandfed.org/president-and-ceo",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
-    },
-    {
-      "id": "chicago",
-      "url": "https://www.chicagofed.org/utilities/about-us/office-of-the-president/office-of-the-president-speaking",
-      "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
-    },
-    {
-      "id": "richmond",
-      "url": "https://www.richmondfed.org/press_room/speeches",
-      "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
-    },
-    {
-      "id": "sanfrancisco",
-      "url": "https://www.frbsf.org/news-and-media/speeches/",
-      "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
       "id": "minneapolis",
       "url": "https://www.minneapolisfed.org/topic/monetary-policy",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
-      "id": "stlouis",
-      "url": "https://www.stlouisfed.org/from-the-president",
+      "id": "richmond",
+      "url": "https://www.richmondfed.org/press_room/speeches",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
-      "id": "kansascity",
-      "url": "https://www.kansascityfed.org/senior-leadership/president/",
+      "id": "chicago",
+      "url": "https://www.chicagofed.org/utilities/about-us/office-of-the-president/office-of-the-president-speaking",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     },
     {
       "id": "atlanta",
       "url": "https://www.atlantafed.org/who-we-are/people/executive-leadership-committee/cheryl-venable",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
+    },
+    {
+      "id": "stlouis",
+      "url": "https://www.stlouisfed.org/from-the-president",
+      "status": "ok",
+      "checkedAt": "2026-10-14T02:34:23.410Z"
+    },
+    {
+      "id": "sanfrancisco",
+      "url": "https://www.frbsf.org/news-and-media/speeches/",
+      "status": "ok",
+      "checkedAt": "2026-10-14T02:34:23.410Z"
+    },
+    {
+      "id": "newyork",
+      "url": "https://www.newyorkfed.org/newsevents/speeches/index.html",
+      "status": "error",
+      "checkedAt": "2026-10-14T02:34:23.410Z",
+      "error": "Command failed: curl --silent --show-error --fail --location --max-time 25 https://www.newyorkfed.or"
+    },
+    {
+      "id": "kansascity",
+      "url": "https://www.kansascityfed.org/senior-leadership/president/",
+      "status": "error",
+      "checkedAt": "2026-10-14T02:34:23.410Z",
+      "error": "Command failed: curl --silent --show-error --fail --location --max-time 25 https://www.kansascityfed"
     },
     {
       "id": "statement",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
       "status": "ok",
-      "checkedAt": "2026-10-13T03:59:59.230Z"
+      "checkedAt": "2026-10-14T02:34:23.410Z"
     }
   ],
   "warnings": [
     "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-qa-at-the-council-on-foreign-relations: transcript_unavailable",
-    "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-chairs-the-mayekawa-lecture-of-the-2026-bank-of-japan-institute-for-monetary-and-economic-studies-conference: transcript_unavailable",
     "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-at-the-aspen-ideas-festival-2026: transcript_unavailable",
-    "https://www.minneapolisfed.org/speeches/2026/qa-with-neel-kashkari-at-the-st-paul-area-chamber: transcript_unavailable",
     "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-qa-at-the-2026-investup-ceo-summit: transcript_unavailable",
+    "https://www.minneapolisfed.org/speeches/2026/qa-with-neel-kashkari-at-the-st-paul-area-chamber: transcript_unavailable",
+    "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-chairs-the-mayekawa-lecture-of-the-2026-bank-of-japan-institute-for-monetary-and-economic-studies-conference: transcript_unavailable",
     "https://www.minneapolisfed.org/speeches/2026/conversation-with-neel-kashkari-at-the-2026-bloomberg-invest-conference: transcript_unavailable"
   ],
-  "collectedAt": "2026-10-13T03:59:59.230Z",
-  "checkedAt": "2026-10-13T03:59:59.230Z",
-  "serverTime": "2026-10-13T04:00:17.880Z",
+  "collectedAt": "2026-10-14T02:34:23.410Z",
+  "checkedAt": "2026-10-14T02:34:23.410Z",
+  "serverTime": "2026-10-14T02:35:00.535Z",
   "dataKind": "official_sources_derived_index",
   "refreshSeconds": 300,
   "probabilities": null
