@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-14T02:58:49.938Z",
-  "documents": 93,
+  "checkedAt": "2026-10-15T05:24:08.538Z",
+  "documents": 95,
   "scoredDocuments": 39,
   "coverage": {
     "covered": 17,
@@ -37,24 +37,7 @@
   },
   "score": 69,
   "latestEvent": "2026-10-13",
-  "sourceFailures": [
-    {
-      "id": "cleveland",
-      "url": "https://www.clevelandfed.org/"
-    },
-    {
-      "id": "minneapolis",
-      "url": "https://www.minneapolisfed.org/topic/monetary-policy"
-    },
-    {
-      "id": "document",
-      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm"
-    },
-    {
-      "id": "document",
-      "url": "https://www.frbsf.org/news-and-media/events/2026/07/mary-c-daly-bank-of-spain-conference/"
-    }
-  ],
+  "sourceFailures": [],
   "missingMembers": [
     "Michelle W. Bowman",
     "Jerome H. Powell"
