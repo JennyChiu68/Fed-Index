@@ -57,3 +57,11 @@ next-env.d.ts
 
 *.tar.gz
 .DS_Store
+
+# Editor locks, local credentials and document render intermediates.
+~$*
+.~*
+*.key
+*.p12
+*.pfx
+/docs/render*/

@@ -2,6 +2,29 @@
 
 手机优先、单页面的美联储沟通指数与委员观察工具。公开站点：https://fed-pulse-demo.kinardqgumt.chatgpt.site
 
+## 技术交接
+
+完整前端、服务端、数据采集器、数据快照、数据库迁移和测试都包含在本仓库。
+
+- [功能需求 Word 文档](docs/美联储鹰鸽指数功能需求.docx)：2026 年 10 月 16 日的上线需求，声明、会议纪要和官员讲话统一使用金十数据授权快讯 API，并规定 AI 评分和摘要提示词、后台更新频次、官员名单动态维护及事件去重规则。
+- [当前手机页面预览](docs/preview-mobile.jpg)。
+
+**当前代码实现与上线需求分开说明：** 当前可运行 Demo 已实现下文描述的官方公开资料采集、规则评分和 CME FedWatch 六次会议概率；金十 API、AI 评分与摘要、持续后台扫描，以及完整的人员任期动态机制尚未在当前代码中接入。需求文档是这些上线工作的实施依据，仓库没有包含任何个人 API 密钥。
+
+## 项目结构
+
+| 目录 | 内容 |
+| --- | --- |
+| `frontend/` | 单页面界面、仪表盘、历史走势、会议概率、委员与归因详情 |
+| `public/` | 对外提供的静态脚本、样式和图标 |
+| `server/` | 官方来源采集、指数计算、CME 解析、缓存和数据服务 |
+| `scripts/` | 本地采集、数据检查、依赖安装与启动脚本 |
+| `data/` | 已核实的公开数据快照及数据质量报告，保留原始时间 |
+| `tests/` | 缓存选择、CME 概率解析、实名投票证据测试及样例 |
+| `app/`、`build/`、`lib/` | 页面入口、Worker 和 Sites 运行支持 |
+| `db/`、`drizzle/` | D1 数据结构和迁移 |
+| `docs/` | 最新功能需求和页面预览 |
+
 ## 已接入的数据
 
 - 美联储理事会及 12 家地区联储的官方讲话目录、政策文本和官方摘要；每条记录保存 URL、源站公布日期、采集时间和评分依据。
@@ -35,9 +58,20 @@ CME 市场概率读取用户指定 CME FedWatch 官网内嵌 QuikStrike 的免�
 
 ## 开发
 
+需要 Node.js 22.13.0 或以上版本。首次获取代码后执行：
+
 ```sh
+git clone https://github.com/JennyChiu68/Fed-Index.git
+cd Fed-Index
+npm run install:ci
 npm run dev
+```
+
+检查与构建：
+
+```sh
 npm run check
+node --test tests/*.test.mjs
 node scripts/verify-data.mjs
 npm run build
 npm run start
@@ -46,6 +80,8 @@ npm run start
 本地资料采集（需要网络与 curl）：`node scripts/collect-official.mjs`。初始真实资料在 `data/verified-source-data.json`，质量检查结果在 `data/quality-report.json`。生产不会读取本地 curl，它使用 Worker 内置 fetch。
 
 D1 迁移在 drizzle/，生产发布由 Sites 应用。发布继续使用已有 Site 身份及公开访问设置。
+
+`.openai/hosting.json` 保存现有 Site 身份和绑定名称，属于构建配置。将代码迁移到独立 Cloudflare 账号时，需要自行创建 D1 数据库、执行 `drizzle/0000_chief_matthew_murdock.sql`，并将 Worker 的 `DB` 绑定到该数据库；仓库中的占位数据库 ID 不能直接当成生产数据库使用。GitHub 推送本身不会替代站点发布，也不会同步运行中的 D1 缓存；初始化数据使用仓库内的公开快照。
 
 ## 当前范围与限制
 
