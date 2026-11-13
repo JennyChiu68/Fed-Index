@@ -1,53 +1,51 @@
 {
-  "checkedAt": "2026-10-15T05:24:08.538Z",
-  "documents": 95,
-  "scoredDocuments": 39,
+  "checkedAt": "2026-11-12T08:40:34.749Z",
+  "documents": 90,
+  "scoredDocuments": 46,
   "coverage": {
-    "covered": 17,
+    "covered": 15,
     "total": 19,
     "voterCovered": 10,
     "voterTotal": 12,
-    "evidenceCovered": 19,
-    "voteCovered": 12
+    "evidenceCovered": 15,
+    "voteCovered": 2
   },
   "decision": {
-    "date": "2026-09-16",
-    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
-    "voteSource": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260916.htm",
-    "action": "hike",
-    "changeBps": 25,
-    "votedFor": [
-      "warsh",
-      "jefferson",
-      "williams",
-      "bowman",
-      "barr",
+    "date": "2026-10-28",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+    "voteSource": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+    "action": "hold",
+    "changeBps": 0,
+    "votedFor": [],
+    "votedAgainst": [
       "cook",
-      "powell",
-      "waller",
-      "hammack",
-      "kashkari",
-      "logan",
-      "paulson"
+      "hammack"
     ],
-    "votedAgainst": [],
-    "supportCount": 12,
-    "dissentCount": 0,
+    "supportCount": 10,
+    "dissentCount": 2,
     "totalVotes": 12
   },
-  "score": 69,
-  "latestEvent": "2026-10-13",
+  "score": 71,
+  "latestEvent": "2026-11-10",
+  "calculationDate": "2026-11-12",
   "sourceFailures": [],
   "missingMembers": [
-    "Michelle W. Bowman",
-    "Jerome H. Powell"
+    "Jerome H. Powell",
+    "Neel Kashkari",
+    "Mary C. Daly",
+    "Cheryl Venable"
   ],
-  "missingPolicyEvidence": [],
+  "missingPolicyEvidence": [
+    "Jerome H. Powell",
+    "Neel Kashkari",
+    "Mary C. Daly",
+    "Cheryl Venable"
+  ],
   "tests": "passed",
   "limitations": [
-    "Rule measurement is research-grade and has not been backtested or independently calibrated.",
+    "Current included speeches have AI-assisted full-text semantic reviews bound to exact source text; this is not independent expert calibration or predictive backtesting.",
     "Some official appearances have video or no transcript; these are excluded.",
     "Retrospective history uses the current roster and model.",
-    "CME probabilities use the public FedWatch Current table; source timestamps and cache failures are preserved. These are futures-implied probabilities, independent of the text index."
+    "CME probabilities use the public FedWatch Current table or an explicitly dated historical column when Current timestamps are invalid; source dates and cache failures are preserved. These are futures-implied probabilities, independent of the text index."
   ]
 }

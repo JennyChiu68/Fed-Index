@@ -1,24 +1,60 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f8fa">
-  <meta name="description" content="Fed Pulse 美联储鹰鸽指数：官方政策沟通、真实委员名单与官方利率。鹰鸽指数基于原文规则计算。">
-  <title>Fed Pulse · 美联储鹰鸽指数</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23142635'/%3E%3Cpath d='M8 23h7l4-11 5 18 4-7h5' stroke='%2368cbb4' fill='none' stroke-width='3'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" type="module"></script>
-</head>
-<body>
-  <div class="app-shell">
-    <header class="app-header">
-      <a href="#overview" class="brand" aria-label="Fed Pulse 首页"><span class="brand-icon"><svg viewBox="0 0 24 24"><path d="M3 13h5l3-8 4 14 3-6h3"/></svg></span><span>fed<span class="brand-light">pulse</span><span class="brand-dot">.</span></span></a>
-      <div class="header-actions"><span class="demo-pill live-pill">官方数据</span><button class="icon-button" id="refresh-button" aria-label="刷新官方数据"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 11-1l3 3M18 17a7 7 0 0 1-11 1l-3-3"/></svg></button></div>
-    </header>
-    <main id="main" tabindex="-1"></main>
-  </div>
-  <dialog id="sheet"><div class="sheet-handle"></div><div class="sheet-header"><h2 id="sheet-title"></h2><button class="icon-button" id="close-sheet" aria-label="关闭弹窗">✕</button></div><div id="sheet-content"></div></dialog>
-  <div class="toast" id="toast" role="status"></div>
-</body>
-</html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff">
+<meta name="description" content="金十数据 · 美联储鹰鸽指数，追踪政策沟通、委员立场与利率决议预期。"><title>美联储鹰鸽指数 · 金十数据</title>
+<link rel="stylesheet" href="/ask-ai/styles.css"><script defer src="/ask-ai/shell.js"></script><script defer src="/ask-ai/page-data.js"></script><script defer src="/ask-ai/ai.js"></script><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css"><script defer src="/assets/echarts.min.js"></script><script defer src="/assets/html-to-image.js"></script><script type="module" src="/app.js"></script></head>
+<body><div class="app-shell j-mini-fixed-shell">
+<header class="fixed-top"><div class="statusbar"><span>9:41</span><div class="system-icons"><img src="/assets/plus-shell-status-cellular-569-149.svg" alt="信号"><img src="/assets/plus-shell-status-wifi-569-149.svg" alt="无线网络"><img src="/assets/plus-shell-status-battery-569-149.svg" alt="电量"></div></div>
+<nav class="mini-nav" aria-label="小程序导航"><div class="nav-left"><button id="back-button" aria-label="回到概览"><img src="/assets/plus-shell-nav-back-569-150.svg" alt=""></button></div><strong>美联储鹰鸽指数</strong><img class="capsule" src="/assets/plus-shell-nav-capsule-569-150.svg" alt="微信小程序"></nav></header>
+<main data-ai-content id="main" tabindex="-1"></main>
+<footer class="bottom-actions"><div class="action-grid">
+<button data-action="comments"><span><img class="comment-message-icon" src="/assets/ask-ai/jinshi-message.svg" alt=""></span><label>评论</label></button>
+<button data-action="subscribe"><span><img src="/assets/plus-shell-bookmark-569-115.svg" alt=""></span><label>订阅</label></button>
+<button data-action="image"><span><img src="/assets/plus-shell-image-569-115.svg" alt=""></span><label>生成长图</label></button>
+<button data-action="share"><span><img src="/assets/plus-shell-wechat-569-115.svg" alt=""></span><label>分享</label></button>
+<button id="askAI" aria-haspopup="dialog" aria-controls="aiSheet"><span><img class="ask-ai-logo" src="/assets/ask-ai/ai-doubao.png" alt=""></span><label>问 AI</label></button>
+</div><div class="home-safe"></div></footer></div>
+<dialog id="sheet" aria-labelledby="sheet-title"><div class="sheet-handle"></div><div class="sheet-header"><h2 id="sheet-title"></h2><button class="icon-button" id="close-sheet" aria-label="关闭弹窗">✕</button></div><div id="sheet-content"></div></dialog>
+<div class="toast" id="toast" role="status"></div><aside id="floating-index" hidden></aside>    <div class="sheet-mask" id="sheetMask"></div>
+
+    <section class="j-bottom-sheet ai-sheet" id="aiSheet" role="dialog" aria-modal="true" aria-labelledby="aiTitle" aria-hidden="true" tabindex="-1">
+      <header class="ai-sheet__header">
+        <span class="ai-sheet__mark" aria-hidden="true"><svg class="ai-sheet__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" d="M21 11V21H3V3H13M17 17V11M7.71677 12.9443L6.49707 17H6.50007L9.50004 7H10.5L13.5 17H13.497L12.3164 13.0546M8 13.0546H12" stroke-linecap="square" stroke-width="2"></path><path stroke="currentColor" d="M19.25 3L19.7697 4.23028L21 4.75L19.7697 5.26972L19.25 6.5L18.7303 5.26972L17.5 4.75L18.7303 4.23028L19.25 3Z" stroke-width="2"></path></svg></span>
+        <div><h2 id="aiTitle">让 AI 帮你读懂内容</h2></div>
+        <button class="ai-icon-button" type="button" data-close aria-label="关闭问 AI" title="关闭"><img src="/assets/ask-ai/ai-close.svg" alt="" /></button>
+      </header>
+      <div class="ai-sheet__body">
+        <div class="ai-context-row">
+          <p class="ai-context-hint">复制提示词到AI工具解读</p>
+          <div class="ai-provider-logos" aria-label="AI 工具示例"><img src="/assets/ask-ai/ai-doubao.png" alt="豆包" title="豆包" /><img src="/assets/ask-ai/ai-yuanbao.png" alt="元宝" title="元宝" /><img src="/assets/ask-ai/ai-deepseek.png" alt="DeepSeek" title="DeepSeek" /><img src="/assets/ask-ai/ai-qianwen.png" alt="千问" title="千问" /><span>...</span></div>
+        </div>
+        <div id="aiScenes" class="ai-scene-tabs" role="tablist" aria-label="解读场景"></div>
+        <div id="aiEditor" class="ai-scene-editor" role="tabpanel" aria-labelledby="aiScene-beginner-understand">
+          <div class="ai-editor-toolbar">
+            <label for="aiPrompt">提示词</label>
+            <button class="ai-editor-reset" id="aiReset" type="button"><img src="/assets/ask-ai/ai-reset.svg" alt="" />恢复默认</button>
+          </div>
+          <div class="ai-prompt-field">
+            <div class="ai-inline-editor-label" aria-hidden="true">解读要求</div>
+            <textarea id="aiPrompt" class="ai-prompt-editor" spellcheck="false"></textarea>
+            <section class="ai-inline-data" aria-label="自动附带的参考数据">
+              <div class="ai-inline-data-heading"><strong>参考数据</strong></div>
+              <pre id="aiPageDataText"></pre>
+            </section>
+          </div>
+          <div class="ai-editor-actions">
+            <button id="aiSavePrompt" class="ai-editor-save" type="button" title="保存到当前浏览器" disabled>保存</button>
+          </div>
+        </div>
+        <div id="aiManualCopy" class="ai-manual-copy" hidden>
+          <label for="aiManualPrompt">手动复制</label>
+          <textarea id="aiManualPrompt" readonly aria-label="手动复制提示词"></textarea>
+        </div>
+      </div>
+      <footer class="ai-sheet__footer">
+        <button id="aiCopyPrompt" class="ai-scene-copy" type="button"><svg class="ai-scene-copy-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v0.468.0 - ISC --><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span class="ai-scene-copy-text">复制提示词</span></button>
+      </footer>
+      <p class="ai-toast" id="aiFeedback" role="status" aria-live="polite" aria-atomic="true"></p>
+    </section>
+
+</body></html>

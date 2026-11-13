@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {selectOfficialData,selectFedWatchData} from '../server/cache-selection.mjs';
+import {EXTRACTION_VERSION} from '../server/sources.mjs';
 const doc=(url,fetchedAt,value)=>({url,date:'2026-10-08',fetchedAt,value});
 test('fresh verified publication replaces older cached metadata without losing other verified documents',()=>{
  const cached={collectedAt:'2026-10-13T03:00:00Z',documents:[doc('same','2026-10-13T03:00:00Z','old'),doc('extra','2026-10-13T03:00:00Z','keep')]};
@@ -13,6 +14,18 @@ test('expired documents do not reappear through cache merging',()=>{
  const seed={collectedAt:'2026-10-13T04:00:00Z',documents:[]};
  const cached={collectedAt:'2026-10-12T04:00:00Z',documents:[{url:'expired',date:'2025-01-01'}]};
  assert.equal(selectOfficialData(seed,cached).documents.length,0);
+});
+test('a later old-parser cache cannot overwrite a verified activity-date correction',()=>{
+ const seed={collectedAt:'2026-11-12T07:00:00Z',documents:[{url:'same',date:'2026-11-09',extractionVersion:EXTRACTION_VERSION,fetchedAt:'2026-11-12T07:00:00Z'}]};
+ const cached={collectedAt:'2026-11-12T07:05:00Z',documents:[{url:'same',date:'2026-10-16',fetchedAt:'2026-11-12T07:05:00Z'}]};
+ assert.equal(selectOfficialData(seed,cached).documents[0].date,'2026-11-09');
+});
+test('a newer cache without minutes preserves the independently verified minutes snapshot',()=>{
+ const latestMinutes={meetingDate:'2026-09-16',checkedAt:'2026-11-12T06:43:00Z',url:'official-minutes'};
+ const seed={collectedAt:'2026-11-12T06:43:00Z',documents:[],latestMinutes};
+ const cached={collectedAt:'2026-11-12T06:45:00Z',documents:[]};
+ assert.equal(selectOfficialData(seed,cached).latestMinutes,latestMinutes);
+ assert.equal(selectOfficialData(seed,{...cached,latestMinutes:{meetingDate:'2026-07-29',checkedAt:cached.collectedAt}}).latestMinutes,latestMinutes);
 });
 const meeting=(date,asOf,checkedAt,value)=>({meetingDate:date,asOf,checkedAt,value});
 test('CME merging preserves a newer source quote even when another snapshot was checked later',()=>{

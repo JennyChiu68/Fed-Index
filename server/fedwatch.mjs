@@ -33,36 +33,62 @@ export function meetingPostback(html,pageURL,target){
  return {url:url.href,method:'POST',body:fields.toString(),headers:{'content-type':'application/x-www-form-urlencoded'}};
 }
 function chicagoTime(date,time){const [y,m,d]=dateParts(date);const [hh,mm,ss]=time.split(':').map(Number);if(hh>23||mm>59||ss>59)throw Error('cme_invalid_time');const civil=Date.UTC(y,m,d,hh,mm,ss);let utc=civil;const fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});for(let i=0;i<3;i++){const p=Object.fromEntries(fmt.formatToParts(new Date(utc)).map(x=>[x.type,x.value]));utc+=civil-Date.UTC(+p.year,+p.month-1,+p.day,+p.hour,+p.minute,+p.second)}return new Date(utc).toISOString()}
-export function parseFedWatch(html,{now=new Date(),expectedMeeting=null}={}){
+export function meetingMatchesExpectation(actual,expected,allowedMeetingDates=[],now=new Date()){
+ if(!expected||actual===expected)return true;
+ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+ const successor=allowedMeetingDates.filter(d=>d>expected).sort()[0];
+ return expected===today&&actual===successor;
+}
+export function parseFedWatch(html,{now=new Date(),expectedMeeting=null,allowedMeetingDates=[],historical=false}={}){
  if(!/IntegratedFedWatchTool/.test(html))throw Error('cme_tool_missing');
  const info=/<th[^>]*>Meeting Date<\/th>[\s\S]*?<\/tr>\s*<tr[^>]*>([\s\S]*?)<\/tr>/i.exec(html);
  const meetingDate=isoDate(clean(/<td\b[^>]*>([\s\S]*?)<\/td>/i.exec(info?.[1]||'')?.[1]||''));
  if(meetingDate<now.toISOString().slice(0,10))throw Error('cme_meeting_expired');
- if(expectedMeeting&&meetingDate!==expectedMeeting)throw Error('cme_fomc_date_mismatch');
+ if(!meetingMatchesExpectation(meetingDate,expectedMeeting,allowedMeetingDates,now))throw Error('cme_fomc_date_mismatch');
  const summary=/<th[^>]*>Ease<\/th>\s*<th[^>]*>No Change<\/th>\s*<th[^>]*>Hike<\/th>\s*<\/tr>\s*<tr[^>]*>([\s\S]*?)<\/tr>/i.exec(html);
  const values=[...(summary?.[1]||'').matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m=>clean(m[1]));
  if(values.length!==3||values.some(v=>!/^\d+(?:\.\d+)?\s*%$/.test(v)))throw Error('cme_summary_missing');
- const [cut,hold,hike]=values.map(v=>parseFloat(v));
+ let [cut,hold,hike]=values.map(v=>parseFloat(v));
  const marker=html.search(/<th\b[^>]*>Target Rate \(bps\)<\/th>/i);if(marker<0)throw Error('cme_outcomes_missing');
  const table=html.slice(marker,html.indexOf('</table>',marker));const outcomes=[];
+ let column=1,historyDate=null;
+ if(historical){
+  const headings=/<tr\b[^>]*class=["']compact["'][^>]*>([\s\S]*?)<\/tr>/i.exec(table)?.[1]||'';
+  const dates=[...headings.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map((m,i)=>({label:clean(m[1]),column:i+1})).filter(h=>/^1 (?:Day|Week|Month)\s/.test(h.label)).map(h=>({...h,date:isoDate(h.label.replace(/^1 (?:Day|Week|Month)\s+/,''))}));
+  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+  const selected=dates.filter(h=>h.date<today).sort((a,b)=>b.date.localeCompare(a.date))[0];
+  if(!selected)throw Error('cme_historical_date_unavailable');
+  column=selected.column;historyDate=selected.date;
+ }
  for(const row of table.matchAll(/<tr\b([^>]*)>([\s\S]*?)<\/tr>/gi)){
   const cells=[...row[2].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m=>clean(m[1]));
   const range=/^(\d+)-(\d+)(?:\s+\(Current\))?$/.exec(cells[0]||'');if(!range)continue;
-  if(!cells[1])continue; // Never use historical columns when Now is empty.
-  if(!/^\d+(?:\.\d+)?%$/.test(cells[1]))throw Error('cme_probability_invalid');
-  outcomes.push({lowerBps:+range[1],upperBps:+range[2],probability:parseFloat(cells[1]),current:/\(Current\)/.test(cells[0]),hidden:/\bhide\b/.test(row[1])});
+  if(!cells[column])continue; // A historical series is selected explicitly and keeps its own date.
+  if(!/^\d+(?:\.\d+)?%$/.test(cells[column]))throw Error('cme_probability_invalid');
+  outcomes.push({lowerBps:+range[1],upperBps:+range[2],probability:parseFloat(cells[column]),current:/\(Current\)/.test(cells[0]),hidden:/\bhide\b/.test(row[1])});
  }
  const current=outcomes.filter(o=>o.current);if(current.length!==1)throw Error('cme_current_range_missing');
  if(new Set(outcomes.map(o=>o.lowerBps)).size!==outcomes.length)throw Error('cme_duplicate_range');
  if(outcomes.some(o=>o.upperBps-o.lowerBps!==25||o.probability<0||o.probability>100))throw Error('cme_range_invalid');
  const total=outcomes.reduce((a,o)=>a+o.probability,0);if(Math.abs(total-100)>.3||Math.abs(cut+hold+hike-100)>.2)throw Error('cme_probability_sum_invalid');
  const sum=fn=>outcomes.filter(fn).reduce((a,o)=>a+o.probability,0);
+ if(historical){
+  // Source cells are rounded independently. Normalize only the grouped summary.
+  const grouped=value=>Math.round(value/total*1000)/10;
+  cut=grouped(sum(o=>o.lowerBps<current[0].lowerBps));hold=grouped(current[0].probability);hike=grouped(sum(o=>o.lowerBps>current[0].lowerBps));
+ }
  if(Math.abs(sum(o=>o.lowerBps<current[0].lowerBps)-cut)>.3||Math.abs(current[0].probability-hold)>.3||Math.abs(sum(o=>o.lowerBps>current[0].lowerBps)-hike)>.3)throw Error('cme_summary_distribution_mismatch');
  const stamp=/Data as of\s+(\d{1,2}\s+[A-Za-z]{3}\s+\d{4})\s+(\d{2}:\d{2}:\d{2})\s+CT/.exec(clean(table));if(!stamp)throw Error('cme_timestamp_missing');
- const asOf=chicagoTime(stamp[1],stamp[2]);if(Date.parse(asOf)>now.getTime()+300000)throw Error('cme_future_timestamp');
- return {source:CME_SOURCE,provider:'CME FedWatch',meetingDate,asOf,asOfLabel:`${stamp[1]} ${stamp[2]} CT`,checkedAt:now.toISOString(),currentRange:{lowerBps:current[0].lowerBps,upperBps:current[0].upperBps},cut,hold,hike,outcomes,method:'public_fedwatch_current_table'};
+ const sourceAsOf=chicagoTime(stamp[1],stamp[2]);if(!historical&&Date.parse(sourceAsOf)>now.getTime()+300000)throw Error('cme_future_timestamp');
+ return {source:CME_SOURCE,provider:'CME FedWatch',meetingDate,asOf:historyDate||sourceAsOf,asOfLabel:historyDate?`${historyDate} CT（日度历史值）`:`${stamp[1]} ${stamp[2]} CT`,checkedAt:now.toISOString(),currentRange:{lowerBps:current[0].lowerBps,upperBps:current[0].upperBps},cut,hold,hike,outcomes,method:historical?'public_fedwatch_historical_table':'public_fedwatch_current_table',...(historical?{asOfResolution:'date',sourceProbabilityTotal:Math.round(total*10)/10,summaryMethod:'normalized_source_distribution',currentSourceAsOf:sourceAsOf,fallbackReason:'cme_future_timestamp'}:{})};
 }
-export async function collectFedWatch({fetchImpl=fetch,now=new Date(),expectedMeeting=null,timeoutMs=23000,meetingLimit=1}={}){
+export function parseAvailableFedWatch(html,options={}){
+ try{return parseFedWatch(html,options)}catch(error){
+  if(error.message!=='cme_future_timestamp')throw error;
+  return parseFedWatch(html,{...options,historical:true});
+ }
+}
+export async function collectFedWatch({fetchImpl=fetch,now=new Date(),expectedMeeting=null,allowedMeetingDates=[],timeoutMs=23000,meetingLimit=1}={}){
  const cookies=new Map(),deadline=Date.now()+timeoutMs;
  const get=async(start,options={})=>{
   let url=new URL(start),method=options.method||'GET',body=options.body;
@@ -88,14 +114,14 @@ export async function collectFedWatch({fetchImpl=fetch,now=new Date(),expectedMe
  const view=new URL(decode(action),initial.url);view.pathname=view.pathname.replace('QuikStrikeTools.aspx','QuikStrikeView.aspx');
  result=await get(view.href);
  }
- const nearest=parseFedWatch(result.html,{now,expectedMeeting});
+ const nearest=parseAvailableFedWatch(result.html,{now,expectedMeeting,allowedMeetingDates});
  if(meetingLimit===1)return nearest;
  const choices=parseMeetingChoices(result.html,now).slice(0,Math.min(6,meetingLimit));
  if(!choices.length||choices[0].date!==nearest.meetingDate)throw Error('cme_meeting_list_mismatch');
  const meetings=[nearest],meetingErrors=[];
  // The tool keeps selected dates in session state. Use each returned form in order.
  for(const choice of choices.slice(1)){
-  try{const form=meetingPostback(result.html,result.url,choice.target);const selected=await get(form.url,form);const parsed=parseFedWatch(selected.html,{now,expectedMeeting:choice.date});meetings.push(parsed);result=selected}
+  try{const form=meetingPostback(result.html,result.url,choice.target);const selected=await get(form.url,form);const parsed=parseAvailableFedWatch(selected.html,{now,expectedMeeting:choice.date});meetings.push(parsed);result=selected}
   catch(e){meetingErrors.push({date:choice.date,error:String(e.message).slice(0,100)})}
  }
  return {...nearest,meetings,availableMeetings:choices.map(c=>c.date),meetingErrors};

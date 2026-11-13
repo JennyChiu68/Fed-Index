@@ -1,7 +1,8 @@
-import seed from '../data/verified-source-data.json';
-import {collect,publicSnapshot} from './collector.mjs';
+import seed from '../data/verified-source-data.json' with {type:'json'};
+import {collect,publicSnapshot,nextOfficialMeeting} from './collector.mjs';
 import {ALLOWED_HOSTS} from './sources.mjs';
 import {getFedWatch} from './fedwatch-cache.mjs';
+import {reconstructDay,calculationDay,DAY} from './analysis.mjs';
 import {selectOfficialData} from './cache-selection.mjs';
 const TTL=5*60*1000;
 let memory=null,inflight=null,lastRefreshError=null;
@@ -28,15 +29,22 @@ async function refresh(DB,prior){
  if(data.roster.checkedAt!==data.collectedAt){data.warnings.unshift('官方委员名单本次未通过核验，暂显示最近核实数据。');}
  if(DB){await DB.batch([
   DB.prepare('INSERT INTO source_cache (key, data, updated_at) VALUES (?, ?, ?) ON CONFLICT(key) DO UPDATE SET data=excluded.data, updated_at=excluded.updated_at').bind('official',JSON.stringify(data),data.collectedAt),
-  DB.prepare('INSERT INTO index_observations (date, score, coverage, event_date, method, checked_at) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(date) DO UPDATE SET score=excluded.score,coverage=excluded.coverage,event_date=excluded.event_date,method=excluded.method,checked_at=excluded.checked_at').bind(data.collectedAt.slice(0,10),snapshot.score,snapshot.coverage.covered,snapshot.eventDate,snapshot.method,data.collectedAt)
+  DB.prepare('INSERT INTO index_observations (date, score, coverage, event_date, method, checked_at) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(date) DO UPDATE SET score=excluded.score,coverage=excluded.coverage,event_date=excluded.event_date,method=excluded.method,checked_at=excluded.checked_at').bind(snapshot.indexDate,snapshot.score,snapshot.coverage.covered,snapshot.eventDate,snapshot.method,data.collectedAt)
  ]);}
  memory=data;lastRefreshError=null;return data;
 }
 export async function handlePulse(request,env,ctx){
  if(request.method!=='GET')return Response.json({error:'method_not_allowed'},{status:405});
- const DB=env.DB;const prior=await load(DB);const age=Date.now()-Date.parse(prior.collectedAt);let data=prior;
+ const DB=env.DB;const prior=await load(DB);
+ const historyDate=new URL(request.url).searchParams.get('history_date');
+ if(historyDate){
+  const today=calculationDay(new Date()),age=Date.parse(today)-Date.parse(historyDate);
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(historyDate)||!Number.isFinite(age)||new Date(Date.parse(historyDate)).toISOString().slice(0,10)!==historyDate||age<0||age>=90*DAY)return Response.json({error:'invalid_history_date'},{status:400});
+  return Response.json(reconstructDay(prior.documents,prior.roster,historyDate),{headers:{'cache-control':'no-store'}});
+ }
+const age=Date.now()-Date.parse(prior.collectedAt);let data=prior;
  const waitForSources=new URL(request.url).searchParams.get('wait')==='1';
- const cmeTask=getFedWatch({DB,ctx,wait:waitForSources,expectedMeeting:prior.calendar?.next?.end});
+
  if(age>TTL){
   if(!inflight)inflight=refresh(DB,prior).catch(e=>{lastRefreshError=String(e.message);throw e}).finally(()=>{inflight=null});
   // Respond from verified stored data while refreshing official sources in the background.
@@ -46,7 +54,7 @@ export async function handlePulse(request,env,ctx){
   else ctx.waitUntil(inflight.catch(()=>{}));
  }
  const snapshot=publicSnapshot(data);snapshot.cacheAgeSeconds=Math.floor((Date.now()-Date.parse(data.collectedAt))/1000);snapshot.refreshing=Boolean(inflight);snapshot.storage=DB?'persistent':'seed_only';snapshot.stale=snapshot.cacheAgeSeconds>1800||Boolean(lastRefreshError);if(lastRefreshError)snapshot.warnings=[...(snapshot.warnings||[]),'最近一次来源核查失败：'+lastRefreshError];
- snapshot.probabilities=await cmeTask;
+ snapshot.probabilities=await getFedWatch({DB,ctx,wait:waitForSources,expectedMeeting:nextOfficialMeeting(data.calendar,data.policy)?.end,allowedMeetingDates:data.calendar?.meetings?.map(m=>m.end)||[]});
  // Keep the CME timestamp and failure state independent of the Fed text refresh.
  snapshot.refreshing=snapshot.refreshing||snapshot.probabilities.refreshing;
  return Response.json(snapshot,{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});

@@ -1,0 +1,97 @@
+{
+  "warsh": {
+    "path": "/assets/portraits/warsh.png",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/chairman-warsh-130x168.png",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm"
+  },
+  "jefferson": {
+    "path": "/assets/portraits/jefferson.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/jefferson_phillip_rdax_130x162s.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm"
+  },
+  "bowman": {
+    "path": "/assets/portraits/bowman.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/bowman_michelle_rdax_130x163s.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm"
+  },
+  "barr": {
+    "path": "/assets/portraits/barr.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/Barr_michael_8x10_July_25_22-444_rdax_130x162s.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm"
+  },
+  "cook": {
+    "path": "/assets/portraits/cook.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/Cook_Lisa_8x10_June_29_22-316_pp_rdax_130x162s.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm"
+  },
+  "powell": {
+    "path": "/assets/portraits/powell.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/Powell_Jerome_Aug_16_22-674_8x10_rdax_130x162s.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/powell.htm"
+  },
+  "waller": {
+    "path": "/assets/portraits/waller.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/waller_christopher_September_01_2025-1022_highres_rdax_130x163s.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm"
+  },
+  "kashkari": {
+    "path": "/assets/portraits/kashkari.jpg",
+    "source": "https://www.minneapolisfed.org/-/media/images/president/kashkari-neel/2015-11-10/kashkari-neel-2015-11-opta.jpg?rev=1f461fbcf0be470083171bfec9f2741f",
+    "identitySource": "https://www.minneapolisfed.org/topic/monetary-policy"
+  },
+  "venable": {
+    "path": "/assets/portraits/venable.webp",
+    "source": "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Images/who-we-are/people/executive-leadership-committee/venable-cheryl/portrait/02.webp",
+    "identitySource": "https://www.atlantafed.org/who-we-are/people/executive-leadership-committee/cheryl-venable"
+  },
+  "williams": {
+    "path": "/assets/portraits/williams.jpg",
+    "source": "https://www.newyorkfed.org/medialibrary/media/images/v4/about_the_fed/featured_panel/johnwilliams-feature-panel.jpg?la=en&h=640&w=1280&hash=AEBB5A460551F3DD46BF797353167055",
+    "identitySource": "https://www.newyorkfed.org/aboutthefed/orgchart/williams"
+  },
+  "goolsbee": {
+    "path": "/assets/portraits/goolsbee.jpg",
+    "source": "https://www.chicagofed.org/-/media/images/people/square/primary/goolsbee-austan-primary.jpg?sc_lang=en",
+    "identitySource": "https://www.chicagofed.org/people/g/Austan-Goolsbee"
+  },
+  "musalem": {
+    "path": "/assets/portraits/musalem.jpg",
+    "source": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/images/musalem/presidents-outreach/hi-res/alberto-musalem-bio-hi-res.jpg?hash=465452B64CC1FC6CA89F8B93F281CA99&sc_lang=en",
+    "identitySource": "https://www.stlouisfed.org/from-the-president/photos"
+  },
+  "daly": {
+    "path": "/assets/portraits/daly.jpg",
+    "source": "https://www.frbsf.org/wp-content/uploads/Leadership_Daly_FFFF_sm.jpg?crop=1&h=450&quality=100&w=370",
+    "identitySource": "https://www.frbsf.org/our-people/economists/mary-c-daly/"
+  },
+  "paulson": {
+    "path": "/assets/portraits/paulson.jpg",
+    "source": "https://www.philadelphiafed.org/-/media/FRBP/Assets/Images/People/Executive-Leadership/25-06_Anna-Paulson.jpg",
+    "identitySource": "https://www.philadelphiafed.org/our-people/anna-paulson"
+  },
+  "logan": {
+    "path": "/assets/portraits/logan.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/lorie_k_logan.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/federal-reserve-system-dallas.htm"
+  },
+  "collins": {
+    "path": "/assets/portraits/collins.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/susan-collins-formal-portrait-2022-8-10.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/federal-reserve-system-boston.htm"
+  },
+  "barkin": {
+    "path": "/assets/portraits/barkin.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/thomas_barkin.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/federal-reserve-system-richmond.htm"
+  },
+  "hammack": {
+    "path": "/assets/portraits/hammack.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/Headshot%20HR_Beth%20Hammack_8x10%20ratio_2in%20wide.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/federal-reserve-system-cleveland.htm"
+  },
+  "schmid": {
+    "path": "/assets/portraits/schmid.jpg",
+    "source": "https://www.federalreserve.gov/aboutthefed/images/kc_schmid.jpg",
+    "identitySource": "https://www.federalreserve.gov/aboutthefed/federal-reserve-system-kansas-city.htm"
+  }
+}

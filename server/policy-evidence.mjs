@@ -20,7 +20,10 @@ export function attachPolicyEvidence(snapshot,policy,now=new Date()){
  // Reject an incomplete roster, duplicates, future statements, and outdated votes.
  const age=d?now-Date.parse(d.date+'T00:00:00Z'):Infinity;
  const verified=Boolean(d&&age>=0&&age<=90*DAY&&ids.length===voters.length&&new Set(ids).size===ids.length&&voters.every(m=>ids.includes(m.id)));
- const members=snapshot.members.map(m=>({...m,voteEvidence:verified&&ids.includes(m.id)?{date:d.date,url:d.voteSource,action:d.action,changeBps:d.changeBps,supported:d.votedFor.includes(m.id)}:null}));
+ const tally=policy?.voteTally;
+ const partial=Boolean(d&&age>=0&&age<=90*DAY&&tally&&tally.supportCount+tally.dissentCount===voters.length&&d.votedFor.length<=tally.supportCount&&d.votedAgainst.length<=tally.dissentCount&&new Set(ids).size===ids.length&&ids.every(id=>voters.some(m=>m.id===id)));
+ const members=snapshot.members.map(m=>({...m,voteEvidence:(verified||partial)&&ids.includes(m.id)?{date:d.date,url:d.voteSource,action:d.action,changeBps:d.changeBps,supported:d.votedFor.includes(m.id)}:null}));
  const evidenceCovered=members.filter(m=>m.score!=null||m.voteEvidence).length;
- return {...snapshot,members,decision:verified?{...d,supportCount:d.votedFor.length,dissentCount:d.votedAgainst.length,totalVotes:ids.length}:null,coverage:{...snapshot.coverage,evidenceCovered,voteCovered:verified?ids.length:0}};
+ const counts=verified?{supportCount:d.votedFor.length,dissentCount:d.votedAgainst.length}:tally;
+ return {...snapshot,members,decision:verified||partial?{...d,...counts,totalVotes:voters.length}:null,coverage:{...snapshot.coverage,evidenceCovered,voteCovered:verified||partial?ids.length:0}};
 }

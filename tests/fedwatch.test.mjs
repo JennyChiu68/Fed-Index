@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import {parseFedWatch,collectFedWatch,parseMeetingChoices,meetingPostback,CME_TOOL} from '../server/fedwatch.mjs';
+import {parseFedWatch,parseAvailableFedWatch,collectFedWatch,parseMeetingChoices,meetingPostback,CME_TOOL} from '../server/fedwatch.mjs';
 const html=await fs.readFile(new URL('./fixtures/cme-current.html',import.meta.url),'utf8');
 const settings={now:new Date('2026-10-12T08:45:00Z'),expectedMeeting:'2026-10-28'};
 const december=await fs.readFile(new URL('./fixtures/cme-december.html',import.meta.url),'utf8');
@@ -28,6 +28,28 @@ test('converts US Central time with the winter DST offset',()=>{
  const winter=html.replaceAll('28 Oct 2026','9 Dec 2026').replace('12 Oct 2026 03:25:56 CT','1 Dec 2026 03:25:56 CT');
  const d=parseFedWatch(winter,{now:new Date('2026-12-01T10:00:00Z')});
  assert.equal(d.asOf,'2026-12-01T09:25:56.000Z');
+});
+test('future Current data falls back to a dated historical column without borrowing its timestamp or summary',()=>{
+ const options={...settings,now:new Date('2026-10-11T12:00:00Z')};
+ const d=parseAvailableFedWatch(html,options);
+ assert.equal(d.asOf,'2026-10-09');
+ assert.equal(d.method,'public_fedwatch_historical_table');
+ assert.equal(d.asOfResolution,'date');
+ assert.equal(d.hold,82.3);
+ assert.equal(d.outcomes.find(o=>o.current).probability,82.3);
+ assert.equal(d.currentSourceAsOf,'2026-10-12T08:25:56.000Z');
+ assert.ok(Math.abs(d.cut+d.hold+d.hike-100)<.3);
+ assert.equal(parseAvailableFedWatch(html,settings).method,'public_fedwatch_current_table');
+ assert.throws(()=>parseAvailableFedWatch(html.replace('>81.2%</td>','></td>'),settings));
+ assert.throws(()=>parseAvailableFedWatch(html,{...settings,now:new Date('2026-09-01')}),/historical_date_unavailable/);
+});
+test('historical grouped probabilities stay within 100 percent despite rounded source cells',()=>{
+ const rounded=html.replace('375-400 (Current)','375-400').replace('350-375 ','350-375 (Current)').replace('>17.7%</td>','>17.8%</td>');
+ const d=parseFedWatch(rounded,{...settings,now:new Date('2026-10-11T12:00:00Z'),historical:true});
+ assert.equal(d.sourceProbabilityTotal,100.1);
+ assert.equal(d.hike,100);
+ assert.equal(d.cut+d.hold+d.hike,100);
+ assert.equal(d.outcomes.find(o=>o.lowerBps===400).probability,17.8);
 });
 test('follows the public view flow, carries normal cookies, blocks foreign redirects',async()=>{
  const seen=[];

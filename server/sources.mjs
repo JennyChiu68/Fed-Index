@@ -1,7 +1,8 @@
 export const FOMC_URL='https://www.federalreserve.gov/monetarypolicy/fomc.htm';
 export const CALENDAR_URL='https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm';
 export const RATE_URL='https://markets.newyorkfed.org/api/rates/unsecured/effr/last/5.json';
-export const METHOD_VERSION='official-text-rules-1.0';
+export const METHOD_VERSION='official-text-semantic-1.4';
+export const EXTRACTION_VERSION='official-text-extraction-1.1';
 // Identity references are official pages. Voting status is parsed anew from FOMC_URL.
 export const MEMBERS=[
  ['warsh','Kevin Warsh','凯文·沃什','美联储主席','board',2],

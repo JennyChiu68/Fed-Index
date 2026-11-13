@@ -1,0 +1,13 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {scoreDocument} from '../server/analysis.mjs';
+import {publicSnapshot} from '../server/collector.mjs';
+const root=new URL('../data/',import.meta.url);
+const data=JSON.parse(await readFile(new URL('verified-source-data.json',root),'utf8'));
+const reviews=JSON.parse(await readFile(new URL('speech-calibrations.json',root),'utf8'));
+const before=new Map(data.documents.map(d=>[d.url,d]));
+data.documents=data.documents.map(d=>d.documentKind==='event_notice'?d:{...d,...scoreDocument(d)});
+const results=reviews.documents.map(r=>{const d=data.documents.find(d=>d.url===r.url);if(d?.reviewStatus!=='reviewed')throw Error('Reviewed source changed: '+r.url);return {id:r.id,date:r.date,member:r.member,title:r.title,url:r.url,sourceTextKind:r.sourceTextKind,sourceVerifiedAt:r.sourceVerifiedAt,before:r.originalScore,after:d.score,summary:r.summary,note:r.note,evidenceCount:r.evidence.length}});
+await writeFile(new URL('verified-source-data.json',root),JSON.stringify(data));
+await writeFile(new URL('verified-public-snapshot.json',root),JSON.stringify(publicSnapshot(data),null,2));
+await writeFile(new URL('speech-review-results.json',root),JSON.stringify({reviewVersion:reviews.version,reviewedAt:reviews.reviewedAt,scope:reviews.scope,documents:results},null,2));
+console.log(JSON.stringify({score:publicSnapshot(data).score,calibration:publicSnapshot(data).calibration,changes:results.map(r=>({id:r.id,member:r.member,date:r.date,before:r.before,after:r.after}))},null,2));

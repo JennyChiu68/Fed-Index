@@ -1,11 +1,21 @@
-import {MEMBERS,INDEXES,DIRECT,FOMC_URL,CALENDAR_URL,RATE_URL,ALLOWED_HOSTS} from './sources.mjs';
-import {scoreText,compose,DAY,dayUTC} from './analysis.mjs';
+import {MEMBERS,INDEXES,DIRECT,FOMC_URL,CALENDAR_URL,RATE_URL,ALLOWED_HOSTS,EXTRACTION_VERSION} from './sources.mjs';
+import {scoreText,scoreDocument,compose,DAY,dayUTC,calculationDay} from './analysis.mjs';
+import {policyContextFor} from './policy-context.mjs';
 import {decisionEvidence,attachPolicyEvidence} from './policy-evidence.mjs';
 export function decode(s=''){return s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,'$1').replace(/&#x([0-9a-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16))).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(+n)).replace(/&(amp|lt|gt|quot|apos|nbsp|rsquo|lsquo|rdquo|ldquo|ndash|mdash|uuml);/g,(_,n)=>({amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',rsquo:'’',lsquo:'‘',rdquo:'”',ldquo:'“',ndash:'–',mdash:'—',uuml:'ü'}[n]));}
 export function text(s=''){return decode(s.replace(/<(script|style|nav|footer|sup)\b[^>]*>[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]+>/g,' ')).replace(/\s+/g,' ').trim()}
 export function links(html,base){return [...html.matchAll(/<(?:a|mnt-link)\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/(?:a|mnt-link)>/gi)].map(m=>{try{return {url:new URL(decode(m[1]),base).href.split('#')[0].split('?')[0],title:text(m[2]),at:m.index}}catch{return null}}).filter(Boolean)}
 function meta(html,name){const re=new RegExp(`<meta\\b(?=[^>]*(?:name|property)=["']${name}["'])(?=[^>]*content=["']([^"']*)["'])[^>]*>`,'i');return decode(re.exec(html)?.[1]||'')}
 export function extractDate(html,url,hint){
+ const chicago=/\/publications\/speeches\/(20\d\d)\/(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)-(\d{1,2})-/i.exec(new URL(url).pathname);
+ const callout=/<div\b[^>]*class=["']calloutBox2023["'][^>]*>([\s\S]*?)<\/div>/i.exec(html)?.[1];
+ if(chicago&&callout){
+  const event=/\bon (January|February|March|April|May|June|July|August|September|October|November|December) (\d{1,2})\b/i.exec(text(callout));
+  if(event&&event[1].slice(0,3).toLowerCase()===chicago[2].slice(0,3).toLowerCase()&&Number(event[2])===Number(chicago[3])){
+   const month=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'].indexOf(chicago[2].slice(0,3).toLowerCase())+1;
+   return `${chicago[1]}-${String(month).padStart(2,'0')}-${chicago[3].padStart(2,'0')}`;
+  }
+ }
  const metadata=meta(html,'article:published_time')||meta(html,'citation_publication_date')||meta(html,'DC.date')||meta(html,'date')||/"datePublished"\s*:\s*"([^"]+)"/.exec(html)?.[1]||'';
  if(/^20\d\d[-/]\d\d[-/]\d\d/.test(metadata))return metadata.slice(0,10).replaceAll('/','-');
  let m=/(20\d\d)(\d{2})(\d{2})/.exec(new URL(url).pathname);if(m)return `${m[1]}-${m[2]}-${m[3]}`;
@@ -26,7 +36,7 @@ export function extractDocument(html,candidate){
  let body=html.replace(/<(script|style|nav|footer)\b[^>]*>[\s\S]*?<\/\1>/gi,'');
  const cut=body.search(/<h1\b|<div[^>]*id=["']article|<div[^>]*id=["']content|<main\b/i);if(cut>=0)body=body.slice(cut);
  const footer=body.search(/<footer\b|id=["']back-top|class=["'][^"']*(?:related-content|site-footer|global-footer)/i);if(footer>=0)body=body.slice(0,footer);
- let paragraphs=[...body.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(m=>text(m[1]));
+ let paragraphs=[...body.matchAll(/<(p|li)\b[^>]*>([\s\S]*?)<\/\1>/gi)].map(m=>text(m[2]));
  // Official conversation transcripts label speakers. Never attribute a moderator's views to Daly.
  if(candidate.member==='daly'&&/<h[1-6]\b[^>]*>\s*Transcript\s*<\/h[1-6]>/i.test(body)){
   let speaker=null;paragraphs=paragraphs.filter(p=>{
@@ -34,7 +44,7 @@ export function extractDocument(html,candidate){
    return speaker!==null&&/\bDaly\b/.test(speaker);
   });
  }
- paragraphs=paragraphs.filter(p=>p.length>40&&!/^(?:Share|Last Update|About the Fed|By continuing|Subscribe|The views expressed)/i.test(p));
+ paragraphs=[...new Set(paragraphs.filter(p=>p.length>40&&!/^(?:Share|Last Update|About the Fed|By continuing|Subscribe|The views expressed)/i.test(p)))];
  const title=text(/<h3\b[^>]*class=['"]title['"][^>]*>([\s\S]*?)<\/h3>/i.exec(html)?.[1]||/<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(html)?.[1]||candidate.title||meta(html,'og:title'));
  const date=extractDate(html,candidate.url,candidate.date);
  if(!date||!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(Date.parse(date)))throw Error('publication_date_missing');
@@ -42,9 +52,11 @@ export function extractDocument(html,candidate){
  if(!m)throw Error('official_author_unverified');
  if(m.bank!=='board'&&!new RegExp('\\b'+m.id+'\\b','i').test(text(body.slice(0,55000))+' '+meta(html,'citation_author')+' '+meta(html,'author')))throw Error('official_author_unverified');
  if(paragraphs.join(' ').length<300)throw Error('transcript_unavailable');
- const analysis=scoreText(paragraphs);
- return {id:candidate.url,url:candidate.url,member:m.id,bank:m.bank,date,title,sourceHost:new URL(candidate.url).hostname,paragraphs,...analysis};
+ const eventNotice=(/\/events\//.test(candidate.url)||Boolean(calloutSummary(html)))&&!/\bTranscript\b/i.test(body)&&/\bwill (?:deliver (?:keynote )?remarks|participate(?: virtually)? in|moderate)\b/i.test(calloutSummary(html)||paragraphs.slice(0,10).join(' '));
+ const analysis=eventNotice?{score:null,rawScore:null,evidence:[],labels:[],status:'event_notice'}:scoreDocument({url:candidate.url,member:m.id,date,paragraphs});
+ return {id:candidate.url,url:candidate.url,member:m.id,bank:m.bank,date,title,sourceHost:new URL(candidate.url).hostname,paragraphs,extractionVersion:EXTRACTION_VERSION,documentKind:eventNotice?'event_notice':'policy_text',...analysis};
 }
+function calloutSummary(html){return text(/<div\b[^>]*class=["']calloutBox2023["'][^>]*>([\s\S]*?)<\/div>/i.exec(html)?.[1]||'')}
 export function discover(html,source,year,now){
  const pattern=new RegExp(source.pattern.replaceAll('YEAR',String(year)),'i');const limit=dayUTC(new Date(now-180*DAY));
  const found=links(html,source.url.replace('YEAR',year)).filter(l=>pattern.test(new URL(l.url).pathname)&&!l.url.endsWith('.pdf'));
@@ -68,16 +80,25 @@ export function discover(html,source,year,now){
  }
  return [...new Map(out.map(x=>[x.url,x])).values()].slice(0,source.id==='board'?45:12);
 }
-export function parseRoster(html,now){
+export function parseRoster(html,now,{calendar=null}={}){
  const section=/((?:20\d\d) Committee Members)[\s\S]*?(?=Alternate Members)/i.exec(text(html));
  if(!section)throw Error('fomc_roster_structure_changed');
- const year=Number(section[1].slice(0,4));if(year!==now.getUTCFullYear())throw Error('fomc_roster_year_mismatch');
+ const year=Number(section[1].slice(0,4)),currentYear=now.getUTCFullYear();
+ const first=calendar?.meetings?.filter(m=>m.start.startsWith(String(currentYear))).sort((a,b)=>a.start.localeCompare(b.start))[0];
+ const carryover=year===currentYear-1&&first&&officialDay(now)<first.start;
+ if(year!==currentYear&&!carryover)throw Error('fomc_roster_year_mismatch');
  const voters=MEMBERS.filter(m=>new RegExp(`\\b${m.id}\\b`,'i').test(section[0])).map(m=>m.id);
  if(voters.length!==12)throw Error('fomc_voter_count_not_12');
- const members=MEMBERS.map(m=>({...m,voter:voters.includes(m.id),identitySource:m.bank==='board'?`https://www.federalreserve.gov/aboutthefed/bios/board/${m.id}.htm`:INDEXES.find(s=>s.id===m.bank).url,identityVerifiedAt:now.toISOString()}));
- return {year,members,source:FOMC_URL,checkedAt:now.toISOString()};
+ const members=MEMBERS.map(m=>({...m,voter:voters.includes(m.id),identitySource:m.bank==='board'?`https://www.federalreserve.gov/aboutthefed/bios/board/${m.id}.htm`:INDEXES.find(s=>s.id===m.bank).url,identityVerifiedAt:null,voterNameCheckedAt:voters.includes(m.id)?now.toISOString():null,identityVerification:voters.includes(m.id)?'fomc_voter_name':'configured_observer'}));
+ return {year,members,source:FOMC_URL,checkedAt:now.toISOString(),verificationScope:'voting_names_only',carryover:Boolean(carryover)};
 }
-export function parsePolicy(html,url){const paragraphs=[...html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(m=>text(m[1])).filter(p=>/Committee|Voting|federal funds/.test(p));const policy={url,date:extractDate(html,url),title:'FOMC 政策声明',excerpt:paragraphs.find(p=>/target range/.test(p))?.split(/\s+/).slice(0,22).join(' ')+'…',summary:paragraphs.find(p=>/target range/.test(p))||'',voteText:paragraphs.filter(p=>/Voting (?:for|against)/.test(p)).join(' ')};return {...policy,decision:decisionEvidence(policy)};}
+export function policyParagraphs(html){return [...html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(m=>text(m[1])).filter(p=>p.length>40)}
+export function minutesReleaseDate(calendarHtml,url){
+ const at=calendarHtml.indexOf(new URL(url).pathname);if(at<0)return null;
+ const m=/Released\s+([A-Za-z]+ \d{1,2},? 20\d\d)/.exec(text(calendarHtml.slice(at,at+1400)));
+ const stamp=m&&Date.parse(m[1]+' UTC');return Number.isFinite(stamp)?dayUTC(new Date(stamp)):null;
+}
+export function parsePolicy(html,url){const paragraphs=[...html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(m=>text(m[1])).filter(p=>/Committee|Voting|federal funds/.test(p));const tally=/approved the following statement for release by a (\d+)\s*[-–—]\s*(\d+) vote/i.exec(paragraphs.join(' '));const policy={url,context:policyContextFor(url,policyParagraphs(html)),date:extractDate(html,url),title:'FOMC 政策声明',excerpt:paragraphs.find(p=>/target range/.test(p))?.split(/\s+/).slice(0,22).join(' ')+'…',summary:paragraphs.find(p=>/target range/.test(p))||'',voteText:paragraphs.filter(p=>/Voting (?:for|against)/.test(p)).join(' '),voteTally:tally?{supportCount:Number(tally[1]),dissentCount:Number(tally[2])}:null};return {...policy,decision:decisionEvidence(policy)};}
 export function parseVoteRecord(html,url,expectedDate){
  const match=/\/fomcminutes(\d{4})(\d{2})(\d{2})\.htm$/.exec(new URL(url).pathname);
  if(!match||`${match[1]}-${match[2]}-${match[3]}`!==expectedDate)throw Error('vote_meeting_date_mismatch');
@@ -86,46 +107,82 @@ export function parseVoteRecord(html,url,expectedDate){
  if(!voteText)throw Error('named_votes_unavailable');
  return {voteText,voteSource:url,voteDate:expectedDate};
 }
+export function officialDay(now){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(now)}
+export function nextOfficialMeeting(calendar,policy,now=new Date()){
+ const today=officialDay(now);
+ return (calendar?.meetings||[]).filter(m=>m.end>=today&&(!policy?.date||m.end>policy.date)).sort((a,b)=>a.end.localeCompare(b.end))[0]||null;
+}
 export function parseCalendar(html,now){
- const year=now.getUTCFullYear();const section=html.slice(html.indexOf(`${year} FOMC Meetings`));
- const data=section.slice(0,section.indexOf(`${year-1} FOMC Meetings`)>0?section.indexOf(`${year-1} FOMC Meetings`):undefined);
- const textValue=text(data);const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
- const meetings=[];for(const m of textValue.matchAll(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})/g)){const month=String(months.indexOf(m[1])+1).padStart(2,'0');meetings.push({start:`${year}-${month}-${m[2].padStart(2,'0')}`,end:`${year}-${month}-${m[3].padStart(2,'0')}`})}
- return {source:CALENDAR_URL,next:meetings.find(m=>m.end>=dayUTC(now))||null,meetings};
+ const headings=[...html.matchAll(/<h[1-6]\b[^>]*>[\s\S]*?(20\d\d) FOMC Meetings[\s\S]*?<\/h[1-6]>/gi)];
+ const months=['January','February','March','April','May','June','July','August','September','October','November','December'];const meetings=[];
+ for(let i=0;i<headings.length;i++){
+  const year=Number(headings[i][1]);if(year<now.getUTCFullYear()-1||year>now.getUTCFullYear()+1)continue;
+  const section=html.slice(headings[i].index+headings[i][0].length,headings[i+1]?.index);
+  const rows=[...section.matchAll(/class=["'][^"']*fomc-meeting__month[^"']*["'][^>]*>([\s\S]*?)<\/div>[\s\S]*?class=["'][^"']*fomc-meeting__date[^"']*["'][^>]*>([^<]+)/gi)].map(m=>text(m[1])+' '+text(m[2]));
+  const values=rows.length?rows:[text(section)];
+  for(const value of values){
+   for(const m of value.matchAll(/(January|February|March|April|May|June|July|August|September|October|November|December)(?:\s*\/\s*(January|February|March|April|May|June|July|August|September|October|November|December))?\s+(\d{1,2})\s*[-–]\s*(\d{1,2})/g)){
+    const startMonth=months.indexOf(m[1])+1,endMonth=m[2]?months.indexOf(m[2])+1:startMonth,endYear=year+(endMonth<startMonth?1:0);
+    const start=`${year}-${String(startMonth).padStart(2,'0')}-${m[3].padStart(2,'0')}`,end=`${endYear}-${String(endMonth).padStart(2,'0')}-${m[4].padStart(2,'0')}`;
+    if(start<=end&&Number.isFinite(Date.parse(start))&&Number.isFinite(Date.parse(end)))meetings.push({start,end});
+   }
+  }
+ }
+ const unique=[...new Map(meetings.map(m=>[m.end,m])).values()].sort((a,b)=>a.end.localeCompare(b.end));
+ if(!unique.length)throw Error('official_calendar_structure_changed');
+ const calendar={source:CALENDAR_URL,meetings:unique};return {...calendar,next:nextOfficialMeeting(calendar,null,now)};
 }
 async function parallel(items,fn,limit=6){const values=Array(items.length);let i=0;await Promise.all(Array.from({length:Math.min(limit,items.length)},async()=>{for(;;){const n=i++;if(n>=items.length)return;values[n]=await fn(items[n],n)}}));return values}
 export async function collect({fetchText,prior=null,now=new Date(),bootstrap=false}){
  const warnings=[],statuses=[];
  const safe=async(url,id)=>{try{const result=await fetchText(url);statuses.push({id,url,status:'ok',checkedAt:now.toISOString()});return result}catch(e){statuses.push({id,url,status:'error',checkedAt:now.toISOString(),error:String(e.message).slice(0,100)});return null}};
- const year=now.getUTCFullYear();
- const entries=INDEXES.flatMap(s=>[s.url,...(s.discoveryUrls||[])].map(url=>({...s,url:url.replace('YEAR',year)})));
+ const year=now.getUTCFullYear(),years=[...new Set([year,new Date(now-90*DAY).getUTCFullYear()])];
+ const entries=[...new Map(INDEXES.flatMap(source=>[source.url,...(source.discoveryUrls||[])].flatMap(url=>(url.includes('YEAR')?years:[year]).map(y=>({...source,url:url.replaceAll('YEAR',String(y))})))).map(s=>[s.url,s])).values()];
  const [fomcHtml,calendarHtml,rateRaw]=await Promise.all([safe(FOMC_URL,'fomc'),safe(CALENDAR_URL,'calendar'),safe(RATE_URL,'effr')]);
  const results=await parallel(entries,async s=>({source:s,html:await safe(s.url,s.id)}));
- let roster;try{if(fomcHtml)roster=parseRoster(fomcHtml,now)}catch(e){warnings.push(e.message)}
+ let calendar=prior?.calendar||null;
+ if(calendarHtml){try{calendar=parseCalendar(calendarHtml,now)}catch(e){warnings.push(e.message)}}
+ let roster;try{if(fomcHtml)roster=parseRoster(fomcHtml,now,{calendar})}catch(e){warnings.push(e.message)}
  if(!roster)throw Error('official_roster_unavailable_or_changed');
- const documents=new Map((prior?.documents||[]).filter(d=>Date.parse(d.date)>=now-180*DAY).map(d=>[d.url,{...d,...scoreText(d.paragraphs)}]));
- let candidates=results.flatMap(({source,html})=>html?discover(html,source,year,now):[]).concat(DIRECT.filter(d=>d.date>=dayUTC(new Date(now-180*DAY))));
+ const documents=new Map((prior?.documents||[]).filter(d=>Date.parse(d.date)>=now-180*DAY).map(d=>[d.url,{...d,...(d.documentKind==='event_notice'?{}:scoreDocument(d))}]));
+ let candidates=results.flatMap(({source,html})=>html?years.flatMap(y=>discover(html,source,y,now)):[]).concat(DIRECT.filter(d=>d.date>=dayUTC(new Date(now-180*DAY)))).concat(bootstrap?[...documents.values()]:[]);
  candidates=[...new Map(candidates.map(x=>[x.url,x])).values()].filter(d=>ALLOWED_HOSTS.has(new URL(d.url).hostname));
  // Re-read newest documents for source corrections. Older verified documents are immutable until explicit backfill.
- const newOnes=candidates.filter(d=>!documents.has(d.url)||Date.parse(documents.get(d.url).date)>now-14*DAY);
+ const newOnes=candidates.filter(d=>bootstrap||!documents.has(d.url)||Date.parse(documents.get(d.url).date)>now-14*DAY);
  await parallel(newOnes,async candidate=>{const html=await safe(candidate.url,'document');if(!html)return;try{const doc=extractDocument(html,candidate);if(doc.date>dayUTC(now))throw Error('future_document');if(Date.parse(doc.date)<now-180*DAY)return;documents.set(doc.url,{...doc,fetchedAt:now.toISOString()})}catch(e){warnings.push(`${candidate.url}: ${e.message}`)}});
  let rate=prior?.rate||null;try{if(rateRaw){const rows=JSON.parse(rateRaw).refRates;if(!Array.isArray(rows)||!rows.length||!Number.isFinite(rows[0].percentRate))throw Error('invalid_rate_schema');if(rows[0].effectiveDate>dayUTC(now))throw Error('future_rate');rate={...rows[0],source:RATE_URL,checkedAt:now.toISOString(),history:rows.map(r=>({date:r.effectiveDate,rate:r.percentRate}))}}}catch(e){warnings.push(e.message)}
- let policy=prior?.policy||null;let calendar=prior?.calendar||null;
+ let policy=prior?.policy||null;
+ let latestMinutes=prior?.latestMinutes||null;
+ const minutesLink=fomcHtml&&links(fomcHtml,FOMC_URL).find(l=>l.title==='Recent Minutes');
+ if(minutesLink){
+  const match=/\/fomcminutes(\d{4})(\d{2})(\d{2})\.htm$/.exec(minutesLink.url);
+  if(match){
+   const meetingDate=`${match[1]}-${match[2]}-${match[3]}`;
+   const minutesHtml=await safe(minutesLink.url,'latest-minutes');
+   if(minutesHtml&&meetingDate<=dayUTC(now)){
+    try{latestMinutes={title:'FOMC 会议纪要',meetingDate,url:minutesLink.url,releaseDate:calendarHtml?minutesReleaseDate(calendarHtml,minutesLink.url):null,context:policyContextFor(minutesLink.url,policyParagraphs(minutesHtml)),...parseVoteRecord(minutesHtml,minutesLink.url,meetingDate),checkedAt:now.toISOString()}}catch(e){warnings.push(e.message)}
+   }
+  }
+ }
  if(fomcHtml){const latest=links(fomcHtml,FOMC_URL).find(l=>l.title==='Recent Statement');if(latest){const h=await safe(latest.url,'statement');if(h)policy={...parsePolicy(h,latest.url),checkedAt:now.toISOString()}}}
  if(policy){
   // Minutes provide named votes when the release omits them. Never join votes from another meeting.
-  if(prior?.policy?.date===policy.date&&prior.policy.voteSource&&!policy.voteText)policy={...policy,voteText:prior.policy.voteText,voteSource:prior.policy.voteSource,voteDate:prior.policy.voteDate};
+  if(prior?.policy?.date===policy.date&&prior.policy.voteSource&&!policy.voteSource)policy={...policy,voteText:prior.policy.voteText,voteSource:prior.policy.voteSource,voteDate:prior.policy.voteDate};
   const minutes=calendarHtml&&links(calendarHtml,CALENDAR_URL).find(l=>/\/fomcminutes\d{8}\.htm$/.test(l.url)&&l.url.includes(policy.date.replaceAll('-','')));
   if(minutes){const h=await safe(minutes.url,'minutes');if(h){try{policy={...policy,...parseVoteRecord(h,minutes.url,policy.date),voteCheckedAt:now.toISOString()}}catch(e){warnings.push(e.message)}}}
   policy.decision=decisionEvidence(policy);
  }
- if(calendarHtml)calendar=parseCalendar(calendarHtml,now);
- const output={documents:[...documents.values()].sort((a,b)=>b.date.localeCompare(a.date)),roster,rate,policy,calendar,sourceStatus:statuses,warnings,collectedAt:now.toISOString()};
+ if(calendar)calendar={...calendar,next:nextOfficialMeeting(calendar,policy,now)};
+ const output={documents:[...documents.values()].sort((a,b)=>b.date.localeCompare(a.date)),roster,rate,policy,latestMinutes,calendar,sourceStatus:statuses,warnings,collectedAt:now.toISOString()};
  return output;
 }
 export function publicSnapshot(data,now=new Date()){
  const result=attachPolicyEvidence(compose(data.documents,data.roster,now),data.policy,now);const {documents,...sources}=data;
  const strip=d=>{const {paragraphs,evidence,...rest}=d;return {...rest,evidence:(evidence||[]).map(({excerpt,...rule})=>rule)}};
- const memberSignals=Object.fromEntries(result.members.map(m=>[m.id,data.documents.filter(d=>d.member===m.id&&d.score!=null&&d.date<=dayUTC(now)&&Date.parse(d.date)>=now-90*DAY).slice(0,4).map(strip)]));
- return {...result,...sources,roster:undefined,decision:result.decision,memberSignals,signals:result.signals.map(strip),changes:result.changes.map(strip),sourceStatus:data.sourceStatus.filter(s=>s.id!=='document'),warnings:data.warnings,checkedAt:data.collectedAt,serverTime:now.toISOString(),dataKind:'official_sources_derived_index',refreshSeconds:300,probabilities:null};
+ const memberSignals=Object.fromEntries(result.members.map(m=>[m.id,data.documents.filter(d=>d.member===m.id&&d.score!=null&&d.date<=result.indexDate&&Date.parse(d.date)>=Date.parse(result.indexDate+'T23:59:59Z')-90*DAY).slice(0,4).map(strip)]));
+ const memberOtherTexts=Object.fromEntries(result.members.map(m=>[m.id,data.documents.filter(d=>d.member===m.id&&d.score==null&&d.date<=result.indexDate&&Date.parse(d.date)>=Date.parse(result.indexDate+'T23:59:59Z')-90*DAY).slice(0,4).map(strip)]));
+ const active=data.documents.filter(d=>d.rawScore!=null&&d.date<=result.indexDate&&Date.parse(d.date)>=Date.parse(result.indexDate+'T23:59:59Z')-90*DAY);
+ const calibration={reviewedAt:active.filter(d=>d.reviewedAt).map(d=>d.reviewedAt).sort().at(-1)||null,total:active.length,reviewed:active.filter(d=>d.reviewStatus==='reviewed').length,officialSummaries:active.filter(d=>d.sourceTextKind==='official_summary').length,reviewType:'AI-assisted full-text semantic review',predictiveValidation:false};
+ const sourceHealth={failedSources:data.sourceStatus.filter(s=>s.id!=='document'&&s.status==='error').length,failedDocuments:data.sourceStatus.filter(s=>s.id==='document'&&s.status==='error').length};
+ return {...result,...sources,calibration,sourceHealth,roster:undefined,decision:result.decision,memberSignals,memberOtherTexts,signals:result.signals.map(strip),changes:result.changes.map(strip),sourceStatus:data.sourceStatus.filter(s=>s.id!=='document'||s.status==='error'),warnings:data.warnings,checkedAt:data.collectedAt,serverTime:now.toISOString(),dataKind:'official_sources_derived_index',refreshSeconds:300,probabilities:null};
 }
